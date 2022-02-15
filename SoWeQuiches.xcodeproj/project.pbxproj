@@ -29,6 +29,8 @@
 		E3CE6FF127BBB03400B2ACB8 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CE6FF027BBB03400B2ACB8 /* UserService.swift */; };
 		E3CE6FF427BBE7D600B2ACB8 /* HTTPEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CE6FF327BBE7D600B2ACB8 /* HTTPEndpoint.swift */; };
 		E3CE6FF627BC024300B2ACB8 /* Network+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CE6FF527BC024300B2ACB8 /* Network+Extensions.swift */; };
+		03DB363727BBF24200E4B74B /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DB363627BBF24200E4B74B /* CanvasView.swift */; };
+		03DB363927BBF27B00E4B74B /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DB363827BBF27B00E4B74B /* DrawingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +57,8 @@
 		E3CE6FF027BBB03400B2ACB8 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		E3CE6FF327BBE7D600B2ACB8 /* HTTPEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPEndpoint.swift; sourceTree = "<group>"; };
 		E3CE6FF527BC024300B2ACB8 /* Network+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Network+Extensions.swift"; sourceTree = "<group>"; };
+		03DB363627BBF24200E4B74B /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
+		03DB363827BBF27B00E4B74B /* DrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +103,11 @@
 				E3CE6FDC27BBAB9E00B2ACB8 /* Views */,
 				0375616F27BA578F0067325A /* SoWeQuichesApp.swift */,
 				0375617127BA578F0067325A /* ContentView.swift */,
+				03DB363627BBF24200E4B74B /* CanvasView.swift */,
 				0375617327BA57920067325A /* Assets.xcassets */,
 				0375617527BA57920067325A /* Preview Content */,
 				E3071C6027BE8910006BAA28 /* ApplicationState.swift */,
+				03DB363827BBF27B00E4B74B /* DrawingView.swift */,
 			);
 			path = SoWeQuiches;
 			sourceTree = "<group>";
@@ -297,6 +303,8 @@
 				E3071C5B27BE79C9006BAA28 /* HomeViewModel.swift in Sources */,
 				E3071C5727BE7339006BAA28 /* KeychainAccess.swift in Sources */,
 				E3071C6127BE8910006BAA28 /* ApplicationState.swift in Sources */,
+				03DB363727BBF24200E4B74B /* CanvasView.swift in Sources */,
+				03DB363927BBF27B00E4B74B /* DrawingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
