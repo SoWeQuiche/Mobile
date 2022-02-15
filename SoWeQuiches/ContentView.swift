@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+
     var body: some View {
-        Text("Laroche suce des bites en enfer")
-            .padding()
+        DrawingView()
     }
 }
 
