@@ -11,6 +11,12 @@
 		0375617227BA578F0067325A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375617127BA578F0067325A /* ContentView.swift */; };
 		0375617427BA57920067325A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0375617327BA57920067325A /* Assets.xcassets */; };
 		0375617727BA57920067325A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0375617627BA57920067325A /* Preview Assets.xcassets */; };
+		E3CE6FE027BBABB300B2ACB8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CE6FDF27BBABB300B2ACB8 /* LoginView.swift */; };
+		E3CE6FE227BBABE700B2ACB8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CE6FE127BBABE700B2ACB8 /* LoginViewModel.swift */; };
+		E3CE6FE527BBAC7700B2ACB8 /* RetroSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E3CE6FE427BBAC7700B2ACB8 /* RetroSwift */; };
+		E3CE6FE927BBAD0500B2ACB8 /* LoginDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CE6FE827BBAD0500B2ACB8 /* LoginDTO.swift */; };
+		E3CE6FEF27BBADC000B2ACB8 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CE6FEE27BBADC000B2ACB8 /* Token.swift */; };
+		E3CE6FF127BBB03400B2ACB8 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CE6FF027BBB03400B2ACB8 /* UserService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +25,11 @@
 		0375617127BA578F0067325A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0375617327BA57920067325A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0375617627BA57920067325A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E3CE6FDF27BBABB300B2ACB8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		E3CE6FE127BBABE700B2ACB8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		E3CE6FE827BBAD0500B2ACB8 /* LoginDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDTO.swift; sourceTree = "<group>"; };
+		E3CE6FEE27BBADC000B2ACB8 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		E3CE6FF027BBB03400B2ACB8 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3CE6FE527BBAC7700B2ACB8 /* RetroSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,6 +63,10 @@
 		0375616E27BA578F0067325A /* SoWeQuiches */ = {
 			isa = PBXGroup;
 			children = (
+				E3CE6FE727BBACDE00B2ACB8 /* Service */,
+				E3CE6FDE27BBABA700B2ACB8 /* ViewModel */,
+				E3CE6FDD27BBABA200B2ACB8 /* Model */,
+				E3CE6FDC27BBAB9E00B2ACB8 /* Views */,
 				0375616F27BA578F0067325A /* SoWeQuichesApp.swift */,
 				0375617127BA578F0067325A /* ContentView.swift */,
 				0375617327BA57920067325A /* Assets.xcassets */,
@@ -65,6 +81,55 @@
 				0375617627BA57920067325A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E3CE6FDC27BBAB9E00B2ACB8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E3CE6FDF27BBABB300B2ACB8 /* LoginView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E3CE6FDD27BBABA200B2ACB8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E3CE6FF227BBD4C600B2ACB8 /* DTO */,
+				E3CE6FEE27BBADC000B2ACB8 /* Token.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E3CE6FDE27BBABA700B2ACB8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E3CE6FE627BBACC100B2ACB8 /* Login */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E3CE6FE627BBACC100B2ACB8 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				E3CE6FE127BBABE700B2ACB8 /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		E3CE6FE727BBACDE00B2ACB8 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				E3CE6FF027BBB03400B2ACB8 /* UserService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		E3CE6FF227BBD4C600B2ACB8 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				E3CE6FE827BBAD0500B2ACB8 /* LoginDTO.swift */,
+			);
+			path = DTO;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +148,9 @@
 			dependencies = (
 			);
 			name = SoWeQuiches;
+			packageProductDependencies = (
+				E3CE6FE427BBAC7700B2ACB8 /* RetroSwift */,
+			);
 			productName = SoWeQuiches;
 			productReference = 0375616C27BA578F0067325A /* SoWeQuiches.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +179,9 @@
 				Base,
 			);
 			mainGroup = 0375616327BA578F0067325A;
+			packageReferences = (
+				E3CE6FE327BBAC7700B2ACB8 /* XCRemoteSwiftPackageReference "RetroSwift" */,
+			);
 			productRefGroup = 0375616D27BA578F0067325A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,7 +208,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3CE6FE227BBABE700B2ACB8 /* LoginViewModel.swift in Sources */,
+				E3CE6FEF27BBADC000B2ACB8 /* Token.swift in Sources */,
+				E3CE6FE027BBABB300B2ACB8 /* LoginView.swift in Sources */,
 				0375617227BA578F0067325A /* ContentView.swift in Sources */,
+				E3CE6FF127BBB03400B2ACB8 /* UserService.swift in Sources */,
+				E3CE6FE927BBAD0500B2ACB8 /* LoginDTO.swift in Sources */,
 				0375617027BA578F0067325A /* SoWeQuichesApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,7 +345,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SoWeQuiches/Preview Content\"";
-				DEVELOPMENT_TEAM = S4J5D3N22R;
+				DEVELOPMENT_TEAM = 94FLWD5X32;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -298,7 +374,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SoWeQuiches/Preview Content\"";
-				DEVELOPMENT_TEAM = S4J5D3N22R;
+				DEVELOPMENT_TEAM = 94FLWD5X32;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -341,6 +417,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E3CE6FE327BBAC7700B2ACB8 /* XCRemoteSwiftPackageReference "RetroSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MaxenceMottard/RetroSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E3CE6FE427BBAC7700B2ACB8 /* RetroSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E3CE6FE327BBAC7700B2ACB8 /* XCRemoteSwiftPackageReference "RetroSwift" */;
+			productName = RetroSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0375616427BA578F0067325A /* Project object */;
 }
