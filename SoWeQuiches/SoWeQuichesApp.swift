@@ -9,9 +9,21 @@ import SwiftUI
 
 @main
 struct SoWeQuichesApp: App {
+    
+    @AppStorage("isLoggedIn") var isLoggedIn: Bool = false
+    @ObservedObject var loginViewModel = LoginViewModel()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Group {
+                VStack {
+                    if self.isLoggedIn {
+                        // Home view
+                    } else {
+                        LoginView(viewModel: loginViewModel)
+                    }
+                }
+            }
         }
     }
 }
