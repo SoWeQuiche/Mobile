@@ -8,9 +8,4 @@
 struct Token: Decodable {
     let token: String
 //    let refreshToken: String
-
-    enum CodingKeys: String, CodingKey {
-        case token = "token"
-//        case refreshToken = "refresh_token"
-    }
 }

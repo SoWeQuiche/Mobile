@@ -8,11 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    @ObservedObject private var viewModel: HomeViewModel
-    
-    init(viewModel: HomeViewModel) {
-        self.viewModel = viewModel
-    }
+    @StateObject var viewModel: HomeViewModel
     
     var body: some View {
         Button("Disconnect", action: {

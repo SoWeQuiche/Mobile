@@ -28,8 +28,13 @@ extension Network {
 }
     
 private class JWTNetworkRequestInterceptor: NetworkRequestInterceptor {
-    
+    @Keychained(key: .accessToken) var accessToken
+
     func intercept(_ request: inout URLRequest) async throws {
+        guard let token = accessToken else {
+            throw NetworkError.custom("NO_AVAILABLE_TOKEN")
+        }
+
         request.addValue("Bearer \(token)", forHTTPHeaderField: "authorization")
     }
 }
