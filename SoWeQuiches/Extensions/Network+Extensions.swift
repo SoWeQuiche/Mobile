@@ -28,11 +28,8 @@ extension Network {
 }
     
 private class JWTNetworkRequestInterceptor: NetworkRequestInterceptor {
-//    let userService = UserService()
-
+    
     func intercept(_ request: inout URLRequest) async throws {
-
-        let token = "lol"
         request.addValue("Bearer \(token)", forHTTPHeaderField: "authorization")
     }
 }

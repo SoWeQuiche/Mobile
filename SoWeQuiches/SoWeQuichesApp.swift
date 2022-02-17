@@ -14,7 +14,6 @@ struct SoWeQuichesApp: App {
     @ObservedObject var homeViewModel = HomeViewModel()
     @ObservedObject var applicationState: ApplicationState = .shared
     
-
     var body: some Scene {
         WindowGroup {
             Group {

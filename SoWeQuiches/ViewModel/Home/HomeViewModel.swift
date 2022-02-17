@@ -13,8 +13,7 @@ class HomeViewModel: ObservableObject {
 
     let userService: UserService = UserService()
     
-    init() {
-    }
+    init() {}
 
     func disconnect() {
         accessToken = nil

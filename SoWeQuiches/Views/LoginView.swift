@@ -59,7 +59,6 @@ struct LoginView: View {
                                 await self.viewModel.login(mail: self.mail, password: self.password)
                             }
                         }
-
                     }
                 }) {
                 HStack {
