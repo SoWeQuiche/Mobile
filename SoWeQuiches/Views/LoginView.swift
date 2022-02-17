@@ -18,7 +18,7 @@ struct LoginView: View {
             VStack(alignment: .center, spacing: 0) {
                 Spacer()
                 VStack {
-                    if let message = viewModel.formError?.maessage {
+                    if let message = viewModel.formError?.message {
                         Text(message)
                             .fontWeight(.semibold)
                             .foregroundColor(.red)

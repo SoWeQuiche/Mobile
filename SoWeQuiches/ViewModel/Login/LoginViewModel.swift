@@ -69,31 +69,22 @@ class LoginViewModel: ObservableObject {
             guard let credential = authorization.credential as? ASAuthorizationAppleIDCredential,
                   let identityTokenData = credential.identityToken,
                   let id_token = String(data: identityTokenData, encoding: .utf8) else {
-                print("ta mère")
-                return
-            }
-
-            let lastname = credential.fullName?.familyName
-            let firstname = credential.fullName?.givenName
-            print(identityTokenData)
-            
-            
+                        print("ta mère")
+                        return
+                  }
+      
+            let lastname = credential.fullName?.familyName ?? ""
+            let firstname = credential.fullName?.givenName ?? ""
+            let dto = RegisterSWADTO(lastname: lastname, firstname: firstname, id_token: id_token)
+            Task { try await userService.userLoginApple.call(body: dto) }
         }
     }
-    
-    struct RegisterSWADTO: Encodable {
-        let lastname: String
-        let firstname: String
-        let id_token: String
-    }
-
     
     enum FormError {
         case emptyFields
         case badCredentials
-
         
-        var maessage: String {
+        var message: String {
             switch self {
             case .emptyFields: return "Un ou plusieurs champs sont vides"
             case .badCredentials: return "Mauvais mot de passe ou adresse mail"

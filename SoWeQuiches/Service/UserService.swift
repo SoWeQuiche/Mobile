@@ -15,6 +15,9 @@ final class UserService {
     @Network<Token>(endpoint: .login, method: .POST)
     var userLogin
     
+    @Network<Token>(endpoint: .loginApple, method: .POST)
+    var userLoginApple
+    
     @Network<User>(authenticated: .me, method: .GET)
     var getMe
 }

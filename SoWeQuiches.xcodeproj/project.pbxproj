@@ -19,6 +19,7 @@
 		E3071C5B27BE79C9006BAA28 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3071C5A27BE79C9006BAA28 /* HomeViewModel.swift */; };
 		E3071C5E27BE7DC4006BAA28 /* AccessTokenKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3071C5D27BE7DC3006BAA28 /* AccessTokenKey.swift */; };
 		E3071C6127BE8910006BAA28 /* ApplicationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3071C6027BE8910006BAA28 /* ApplicationState.swift */; };
+		E345E43127BEEFBC0037FE51 /* RegisterSWADTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E345E43027BEEFBC0037FE51 /* RegisterSWADTO.swift */; };
 		E3CE6FE027BBABB300B2ACB8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CE6FDF27BBABB300B2ACB8 /* LoginView.swift */; };
 		E3CE6FE227BBABE700B2ACB8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CE6FE127BBABE700B2ACB8 /* LoginViewModel.swift */; };
 		E3CE6FE527BBAC7700B2ACB8 /* RetroSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E3CE6FE427BBAC7700B2ACB8 /* RetroSwift */; };
@@ -44,6 +45,7 @@
 		E3071C5D27BE7DC3006BAA28 /* AccessTokenKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenKey.swift; sourceTree = "<group>"; };
 		E3071C6027BE8910006BAA28 /* ApplicationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationState.swift; sourceTree = "<group>"; };
 		E345E42F27BE91C70037FE51 /* SoWeQuiches.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SoWeQuiches.entitlements; sourceTree = "<group>"; };
+		E345E43027BEEFBC0037FE51 /* RegisterSWADTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSWADTO.swift; sourceTree = "<group>"; };
 		E3CE6FDF27BBABB300B2ACB8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E3CE6FE127BBABE700B2ACB8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		E3CE6FE827BBAD0500B2ACB8 /* LoginDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDTO.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				E3CE6FE827BBAD0500B2ACB8 /* LoginDTO.swift */,
+				E345E43027BEEFBC0037FE51 /* RegisterSWADTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E345E43127BEEFBC0037FE51 /* RegisterSWADTO.swift in Sources */,
 				E3CE6FE227BBABE700B2ACB8 /* LoginViewModel.swift in Sources */,
 				E3CE6FEF27BBADC000B2ACB8 /* Token.swift in Sources */,
 				E3CE6FE027BBABB300B2ACB8 /* LoginView.swift in Sources */,
