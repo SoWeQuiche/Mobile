@@ -56,7 +56,7 @@ struct LoginView: View {
                         if !hasEmptyField {
                             viewModel.isLoading = true
                             Task {
-                                let test = await self.viewModel.login(mail: self.mail, password: self.password)
+                                await self.viewModel.login(mail: self.mail, password: self.password)
                             }
                         }
 

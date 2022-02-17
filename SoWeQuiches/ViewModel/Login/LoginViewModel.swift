@@ -8,7 +8,9 @@
 import SwiftUI
 
 class LoginViewModel: ObservableObject {
-    @AppStorage("isLoggedIn") var isLoggedIn: Bool = false
+    @ObservedObject var applicationState: ApplicationState = .shared
+    @Keychained(key: .accessToken) var accessToken
+    
     @Published var isLoading: Bool = false
     @Published var wrongCredentials: Bool = false
     private var userService: UserService
@@ -17,14 +19,15 @@ class LoginViewModel: ObservableObject {
         self.userService = userService
     }
     
-    func login(mail: String, password: String) async -> Any {
+    func login(mail: String, password: String) async {
         do {
             let dto = LoginDTO(mail: mail, password: password)
-            let test = try await userService.userLogin.call(body: dto)
-            return test
+            let result = try await userService.userLogin.call(body: dto)
+            accessToken = result.token
+            applicationState.state = .authenticated
+            isLoading = false
         } catch (let error) {
             print(error)
-            return error
         }
     }
 }
