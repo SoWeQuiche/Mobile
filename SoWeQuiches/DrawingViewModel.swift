@@ -14,14 +14,14 @@ class DrawingViewModel: ObservableObject {
     @Published var canvasView = PKCanvasView()
     @Published var image = UIImage()
 
-    @Network<Void>(url: "https://api.sign.quiches.ovh/files/upload", method: .POST, requestInterceptor: JWTNetworkRequestInterceptor())
-    var network
+    @Network<Void>(authenticated: .fileUpload, method: .POST)
+    var fileUploader
 
     func saveSignature() async {
         image = await canvasView.saveAsUIImage()
         guard let dataImage = image.pngData() else { return }
         do {
-            try await network.uploadFile(filename: "\(UUID().uuidString).png", filetype: "image/png", data: dataImage)
+            try await fileUploader.uploadFile(filename: "\(UUID().uuidString).png", filetype: "image/png", data: dataImage)
         } catch(let error) {
             print(error)
         }
