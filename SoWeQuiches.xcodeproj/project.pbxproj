@@ -11,6 +11,12 @@
 		0375617227BA578F0067325A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375617127BA578F0067325A /* ContentView.swift */; };
 		0375617427BA57920067325A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0375617327BA57920067325A /* Assets.xcassets */; };
 		0375617727BA57920067325A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0375617627BA57920067325A /* Preview Assets.xcassets */; };
+		E3071C4A27BE4199006BAA28 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3071C4927BE4199006BAA28 /* User.swift */; };
+		E3071C5327BE6CEE006BAA28 /* KeychainValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3071C5227BE6CEE006BAA28 /* KeychainValues.swift */; };
+		E3071C5527BE6CF9006BAA28 /* KeychainKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3071C5427BE6CF9006BAA28 /* KeychainKey.swift */; };
+		E3071C5727BE7339006BAA28 /* KeychainAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3071C5627BE7339006BAA28 /* KeychainAccess.swift */; };
+		E3071C5927BE78B3006BAA28 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3071C5827BE78B3006BAA28 /* HomeView.swift */; };
+		E3071C5B27BE79C9006BAA28 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3071C5A27BE79C9006BAA28 /* HomeViewModel.swift */; };
 		E3CE6FE027BBABB300B2ACB8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CE6FDF27BBABB300B2ACB8 /* LoginView.swift */; };
 		E3CE6FE227BBABE700B2ACB8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CE6FE127BBABE700B2ACB8 /* LoginViewModel.swift */; };
 		E3CE6FE527BBAC7700B2ACB8 /* RetroSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E3CE6FE427BBAC7700B2ACB8 /* RetroSwift */; };
@@ -27,6 +33,12 @@
 		0375617127BA578F0067325A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0375617327BA57920067325A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0375617627BA57920067325A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E3071C4927BE4199006BAA28 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E3071C5227BE6CEE006BAA28 /* KeychainValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainValues.swift; sourceTree = "<group>"; };
+		E3071C5427BE6CF9006BAA28 /* KeychainKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainKey.swift; sourceTree = "<group>"; };
+		E3071C5627BE7339006BAA28 /* KeychainAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainAccess.swift; sourceTree = "<group>"; };
+		E3071C5827BE78B3006BAA28 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		E3071C5A27BE79C9006BAA28 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E3CE6FDF27BBABB300B2ACB8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E3CE6FE127BBABE700B2ACB8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		E3CE6FE827BBAD0500B2ACB8 /* LoginDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDTO.swift; sourceTree = "<group>"; };
@@ -67,6 +79,7 @@
 		0375616E27BA578F0067325A /* SoWeQuiches */ = {
 			isa = PBXGroup;
 			children = (
+				E3071C5127BE6CD1006BAA28 /* Extensions */,
 				E3CE6FE727BBACDE00B2ACB8 /* Service */,
 				E3CE6FDE27BBABA700B2ACB8 /* ViewModel */,
 				E3CE6FDD27BBABA200B2ACB8 /* Model */,
@@ -87,10 +100,30 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		E3071C5127BE6CD1006BAA28 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E3CE6FF527BC024300B2ACB8 /* Network+Extensions.swift */,
+				E3071C5227BE6CEE006BAA28 /* KeychainValues.swift */,
+				E3071C5427BE6CF9006BAA28 /* KeychainKey.swift */,
+				E3071C5627BE7339006BAA28 /* KeychainAccess.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E3071C5C27BE79DC006BAA28 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E3071C5A27BE79C9006BAA28 /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		E3CE6FDC27BBAB9E00B2ACB8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				E3CE6FDF27BBABB300B2ACB8 /* LoginView.swift */,
+				E3071C5827BE78B3006BAA28 /* HomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -100,6 +133,7 @@
 			children = (
 				E3CE6FF227BBD4C600B2ACB8 /* DTO */,
 				E3CE6FEE27BBADC000B2ACB8 /* Token.swift */,
+				E3071C4927BE4199006BAA28 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -107,6 +141,7 @@
 		E3CE6FDE27BBABA700B2ACB8 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				E3071C5C27BE79DC006BAA28 /* Home */,
 				E3CE6FE627BBACC100B2ACB8 /* Login */,
 			);
 			path = ViewModel;
@@ -125,7 +160,6 @@
 			children = (
 				E3CE6FF027BBB03400B2ACB8 /* UserService.swift */,
 				E3CE6FF327BBE7D600B2ACB8 /* HTTPEndpoint.swift */,
-				E3CE6FF527BC024300B2ACB8 /* Network+Extensions.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -219,10 +253,16 @@
 				E3CE6FE027BBABB300B2ACB8 /* LoginView.swift in Sources */,
 				0375617227BA578F0067325A /* ContentView.swift in Sources */,
 				E3CE6FF127BBB03400B2ACB8 /* UserService.swift in Sources */,
+				E3071C5527BE6CF9006BAA28 /* KeychainKey.swift in Sources */,
 				E3CE6FF627BC024300B2ACB8 /* Network+Extensions.swift in Sources */,
 				E3CE6FE927BBAD0500B2ACB8 /* LoginDTO.swift in Sources */,
+				E3071C5327BE6CEE006BAA28 /* KeychainValues.swift in Sources */,
+				E3071C5927BE78B3006BAA28 /* HomeView.swift in Sources */,
 				E3CE6FF427BBE7D600B2ACB8 /* HTTPEndpoint.swift in Sources */,
+				E3071C4A27BE4199006BAA28 /* User.swift in Sources */,
 				0375617027BA578F0067325A /* SoWeQuichesApp.swift in Sources */,
+				E3071C5B27BE79C9006BAA28 /* HomeViewModel.swift in Sources */,
+				E3071C5727BE7339006BAA28 /* KeychainAccess.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
