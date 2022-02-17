@@ -10,14 +10,17 @@ import AuthenticationServices
 
 struct LoginView: View {
     
+    @Environment(\.colorScheme) var colorScheme
     @StateObject var viewModel: LoginViewModel
     
     var body: some View {
         NavigationView {
             VStack(alignment: .center, spacing: 0) {
+                Spacer()
                 VStack {
                     if let message = viewModel.formError?.maessage {
                         Text(message)
+                            .fontWeight(.semibold)
                             .foregroundColor(.red)
                             .padding()
                     }
@@ -49,13 +52,18 @@ struct LoginView: View {
                 .padding()
                 .foregroundColor(.white)
                 .background(Color.orange)
-                .cornerRadius(.greatestFiniteMagnitude).shadow(color: Color.orange, radius: 5, x: 2, y: 2)
+                .clipShape(Capsule()).shadow(color: Color.orange, radius: 5, x: 2, y: 2)
                 .padding(.top, 20)
-                .padding(.trailing, 20)
-                
+                .frame(height: 55)
+                .padding(.horizontal, 40)
+                Spacer()
                 SignInWithAppleButton(.signIn,
                     onRequest: { viewModel.generateRequest($0)},
                     onCompletion: { viewModel.authenticationComplete($0) })
+                .signInWithAppleButtonStyle(colorScheme == .dark ? .white : .black)
+                .frame(height: 55)
+                .clipShape(Capsule())
+                .padding(.horizontal, 40)
             }
             .padding(.top, 20)
             .navigationBarTitle("Connexion")

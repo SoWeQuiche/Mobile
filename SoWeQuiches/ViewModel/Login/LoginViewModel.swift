@@ -75,7 +75,7 @@ class LoginViewModel: ObservableObject {
 
             let lastname = credential.fullName?.familyName
             let firstname = credential.fullName?.givenName
-            print(identityToken)
+            print(identityTokenData)
             
             
         }
