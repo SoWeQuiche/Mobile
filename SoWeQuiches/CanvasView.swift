@@ -25,13 +25,3 @@ extension CanvasView: UIViewRepresentable {
 
   func updateUIView(_ uiView: PKCanvasView, context: Context) {}
 }
-
-extension PKCanvasView {
-
-    func saveAsUIImage() -> UIImage {
-        let drawing = self.drawing
-        let visibleRect = self.bounds
-        let image = drawing.image(from: visibleRect, scale: UIScreen.main.scale)
-        return image
-    }
-}

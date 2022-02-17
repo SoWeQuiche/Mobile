@@ -10,18 +10,21 @@ import PencilKit
 
 struct DrawingView: View {
 
-    @State private var canvasView = PKCanvasView()
-    @State private var image = UIImage()
+    @ObservedObject var viewModel: DrawingViewModel
 
     var body: some View {
         VStack {
-            CanvasView(canvasView: $canvasView)
+            CanvasView(canvasView: $viewModel.canvasView)
                 .background(.red)
                 .ignoresSafeArea()
-            Button(action: { image = canvasView.saveAsUIImage() }) {
+            Button(action: {
+                Task {
+                    await viewModel.saveSignature()
+                }
+            }) {
                 Text("Sauvegarder")
             }
-            Image(uiImage: image)
+            Image(uiImage: viewModel.image)
                 .frame(width: 400, height: 400)
         }
     }
@@ -29,6 +32,6 @@ struct DrawingView: View {
 
 struct DrawingView_Previews: PreviewProvider {
     static var previews: some View {
-        DrawingView()
+        DrawingView(viewModel: DrawingViewModel())
     }
 }

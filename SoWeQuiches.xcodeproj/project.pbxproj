@@ -31,6 +31,9 @@
 		E3CE6FF627BC024300B2ACB8 /* Network+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CE6FF527BC024300B2ACB8 /* Network+Extensions.swift */; };
 		03DB363727BBF24200E4B74B /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DB363627BBF24200E4B74B /* CanvasView.swift */; };
 		03DB363927BBF27B00E4B74B /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DB363827BBF27B00E4B74B /* DrawingView.swift */; };
+		03FE426A27BE434500D71AB2 /* DrawingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FE426927BE434500D71AB2 /* DrawingViewModel.swift */; };
+		03FE426D27BE513C00D71AB2 /* netfox in Frameworks */ = {isa = PBXBuildFile; productRef = 03FE426C27BE513C00D71AB2 /* netfox */; };
+		03FE427027BE516D00D71AB2 /* RetroSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 03FE426F27BE516D00D71AB2 /* RetroSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +62,7 @@
 		E3CE6FF527BC024300B2ACB8 /* Network+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Network+Extensions.swift"; sourceTree = "<group>"; };
 		03DB363627BBF24200E4B74B /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		03DB363827BBF27B00E4B74B /* DrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
+		03FE426927BE434500D71AB2 /* DrawingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,8 @@
 			files = (
 				E3BF270827BFAD9200BC83F0 /* AuthenticationServices.framework in Frameworks */,
 				E3CE6FE527BBAC7700B2ACB8 /* RetroSwift in Frameworks */,
+				03FE426D27BE513C00D71AB2 /* netfox in Frameworks */,
+				03FE427027BE516D00D71AB2 /* RetroSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +110,8 @@
 				0375616F27BA578F0067325A /* SoWeQuichesApp.swift */,
 				0375617127BA578F0067325A /* ContentView.swift */,
 				03DB363627BBF24200E4B74B /* CanvasView.swift */,
+				03DB363827BBF27B00E4B74B /* DrawingView.swift */,
+				03FE426927BE434500D71AB2 /* DrawingViewModel.swift */,
 				0375617327BA57920067325A /* Assets.xcassets */,
 				0375617527BA57920067325A /* Preview Content */,
 				E3071C6027BE8910006BAA28 /* ApplicationState.swift */,
@@ -226,7 +234,8 @@
 			);
 			name = SoWeQuiches;
 			packageProductDependencies = (
-				E3CE6FE427BBAC7700B2ACB8 /* RetroSwift */,
+				03FE426C27BE513C00D71AB2 /* netfox */,
+				03FE426F27BE516D00D71AB2 /* RetroSwift */,
 			);
 			productName = SoWeQuiches;
 			productReference = 0375616C27BA578F0067325A /* SoWeQuiches.app */;
@@ -257,7 +266,8 @@
 			);
 			mainGroup = 0375616327BA578F0067325A;
 			packageReferences = (
-				E3CE6FE327BBAC7700B2ACB8 /* XCRemoteSwiftPackageReference "RetroSwift" */,
+				03FE426B27BE513B00D71AB2 /* XCRemoteSwiftPackageReference "netfox" */,
+				03FE426E27BE516D00D71AB2 /* XCRemoteSwiftPackageReference "RetroSwift" */,
 			);
 			productRefGroup = 0375616D27BA578F0067325A /* Products */;
 			projectDirPath = "";
@@ -303,6 +313,7 @@
 				E3071C5B27BE79C9006BAA28 /* HomeViewModel.swift in Sources */,
 				E3071C5727BE7339006BAA28 /* KeychainAccess.swift in Sources */,
 				E3071C6127BE8910006BAA28 /* ApplicationState.swift in Sources */,
+				03FE426A27BE434500D71AB2 /* DrawingViewModel.swift in Sources */,
 				03DB363727BBF24200E4B74B /* CanvasView.swift in Sources */,
 				03DB363927BBF27B00E4B74B /* DrawingView.swift in Sources */,
 			);
@@ -511,20 +522,34 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		E3CE6FE327BBAC7700B2ACB8 /* XCRemoteSwiftPackageReference "RetroSwift" */ = {
+		03FE426B27BE513B00D71AB2 /* XCRemoteSwiftPackageReference "netfox" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kasketis/netfox";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		03FE426E27BE516D00D71AB2 /* XCRemoteSwiftPackageReference "RetroSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/MaxenceMottard/RetroSwift";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.2.0;
+				kind = versionRange;
+				maximumVersion = 1.0.0;
+				minimumVersion = 0.3.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E3CE6FE427BBAC7700B2ACB8 /* RetroSwift */ = {
+		03FE426C27BE513C00D71AB2 /* netfox */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E3CE6FE327BBAC7700B2ACB8 /* XCRemoteSwiftPackageReference "RetroSwift" */;
+			package = 03FE426B27BE513B00D71AB2 /* XCRemoteSwiftPackageReference "netfox" */;
+			productName = netfox;
+		};
+		03FE426F27BE516D00D71AB2 /* RetroSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 03FE426E27BE516D00D71AB2 /* XCRemoteSwiftPackageReference "RetroSwift" */;
 			productName = RetroSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
