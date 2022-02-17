@@ -7,16 +7,6 @@
 
 import SwiftUI
 
-struct ErrorText: View {
-    let text: String
-    
-    var body: some View {
-        Text(text)
-            .foregroundColor(.red)
-            .padding()
-    }
-}
-
 struct LoginView: View {
 
     @StateObject var viewModel: LoginViewModel

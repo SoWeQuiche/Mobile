@@ -26,14 +26,3 @@ struct SoWeQuichesApp: App {
         }
     }
 }
-
-
-class ApplicationState: ObservableObject {
-    static var shared: ApplicationState = .init()
-    
-    @Published var state: State = .unauthenticated
-    
-    enum State {
-        case authenticated, unauthenticated
-    }
-}

@@ -18,6 +18,7 @@
 		E3071C5927BE78B3006BAA28 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3071C5827BE78B3006BAA28 /* HomeView.swift */; };
 		E3071C5B27BE79C9006BAA28 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3071C5A27BE79C9006BAA28 /* HomeViewModel.swift */; };
 		E3071C5E27BE7DC4006BAA28 /* AccessTokenKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3071C5D27BE7DC3006BAA28 /* AccessTokenKey.swift */; };
+		E3071C6127BE8910006BAA28 /* ApplicationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3071C6027BE8910006BAA28 /* ApplicationState.swift */; };
 		E3CE6FE027BBABB300B2ACB8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CE6FDF27BBABB300B2ACB8 /* LoginView.swift */; };
 		E3CE6FE227BBABE700B2ACB8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CE6FE127BBABE700B2ACB8 /* LoginViewModel.swift */; };
 		E3CE6FE527BBAC7700B2ACB8 /* RetroSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E3CE6FE427BBAC7700B2ACB8 /* RetroSwift */; };
@@ -41,6 +42,7 @@
 		E3071C5827BE78B3006BAA28 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		E3071C5A27BE79C9006BAA28 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E3071C5D27BE7DC3006BAA28 /* AccessTokenKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenKey.swift; sourceTree = "<group>"; };
+		E3071C6027BE8910006BAA28 /* ApplicationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationState.swift; sourceTree = "<group>"; };
 		E3CE6FDF27BBABB300B2ACB8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E3CE6FE127BBABE700B2ACB8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		E3CE6FE827BBAD0500B2ACB8 /* LoginDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDTO.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				0375617127BA578F0067325A /* ContentView.swift */,
 				0375617327BA57920067325A /* Assets.xcassets */,
 				0375617527BA57920067325A /* Preview Content */,
+				E3071C6027BE8910006BAA28 /* ApplicationState.swift */,
 			);
 			path = SoWeQuiches;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				0375617027BA578F0067325A /* SoWeQuichesApp.swift in Sources */,
 				E3071C5B27BE79C9006BAA28 /* HomeViewModel.swift in Sources */,
 				E3071C5727BE7339006BAA28 /* KeychainAccess.swift in Sources */,
+				E3071C6127BE8910006BAA28 /* ApplicationState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

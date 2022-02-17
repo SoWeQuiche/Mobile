@@ -11,9 +11,9 @@ struct HomeView: View {
     @StateObject var viewModel: HomeViewModel
     
     var body: some View {
-        Button("Disconnect", action: {
+        Button("Disconnect") {
             viewModel.disconnect()
-        })
+        }
     }
 }
 
