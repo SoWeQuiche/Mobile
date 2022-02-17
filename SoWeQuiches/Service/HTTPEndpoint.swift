@@ -13,6 +13,7 @@ enum HTTPEndpoint: String {
     case login = "/auth/login"
     case loginApple = "/auth/login/apple-id"
     case me = "/auth/me"
+    case fileUpload = "/files/upload"
 
     var url: String? {
         URL(string: baseURL)?.appendingPathComponent(self.rawValue).absoluteString

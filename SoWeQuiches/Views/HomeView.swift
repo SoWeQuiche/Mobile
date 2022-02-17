@@ -11,8 +11,14 @@ struct HomeView: View {
     @StateObject var viewModel: HomeViewModel
     
     var body: some View {
-        Button("Disconnect") {
-            Task { await viewModel.disconnect() } 
+        VStack {
+            DrawingView(viewModel: DrawingViewModel())
+
+            Spacer()
+            
+            Button("Disconnect") {
+                viewModel.disconnect()
+            }
         }
     }
 }
