@@ -10,10 +10,9 @@ import Foundation
 enum HTTPEndpoint: String {
     var baseURL: String { "https://api.sign.quiches.ovh" }
 
-    case authLogin = "/auth/login"
-    case authRegister = "/auth/register"
+    case login = "/auth/login"
 
-    var url: URL? {
-        URL(string: baseURL)?.appendingPathComponent(self.rawValue)
+    var url: String? {
+        URL(string: baseURL)?.appendingPathComponent(self.rawValue).absoluteString
     }
 }
