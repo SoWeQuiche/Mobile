@@ -8,12 +8,13 @@
 import Foundation
 import RetroSwift
 
-public final class UserService {
-    public init() {}
+final class UserService {
+    
+    init() {}
     
     @Network<Token>(endpoint: .login, method: .POST)
-    public var userLogin
+    var userLogin
     
     @Network<User>(authenticated: .me, method: .GET)
-    public var getMe
+    var getMe
 }

@@ -17,6 +17,7 @@
 		E3071C5727BE7339006BAA28 /* KeychainAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3071C5627BE7339006BAA28 /* KeychainAccess.swift */; };
 		E3071C5927BE78B3006BAA28 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3071C5827BE78B3006BAA28 /* HomeView.swift */; };
 		E3071C5B27BE79C9006BAA28 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3071C5A27BE79C9006BAA28 /* HomeViewModel.swift */; };
+		E3071C5E27BE7DC4006BAA28 /* AccessTokenKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3071C5D27BE7DC3006BAA28 /* AccessTokenKey.swift */; };
 		E3CE6FE027BBABB300B2ACB8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CE6FDF27BBABB300B2ACB8 /* LoginView.swift */; };
 		E3CE6FE227BBABE700B2ACB8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CE6FE127BBABE700B2ACB8 /* LoginViewModel.swift */; };
 		E3CE6FE527BBAC7700B2ACB8 /* RetroSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E3CE6FE427BBAC7700B2ACB8 /* RetroSwift */; };
@@ -39,6 +40,7 @@
 		E3071C5627BE7339006BAA28 /* KeychainAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainAccess.swift; sourceTree = "<group>"; };
 		E3071C5827BE78B3006BAA28 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		E3071C5A27BE79C9006BAA28 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		E3071C5D27BE7DC3006BAA28 /* AccessTokenKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenKey.swift; sourceTree = "<group>"; };
 		E3CE6FDF27BBABB300B2ACB8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E3CE6FE127BBABE700B2ACB8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		E3CE6FE827BBAD0500B2ACB8 /* LoginDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDTO.swift; sourceTree = "<group>"; };
@@ -79,7 +81,8 @@
 		0375616E27BA578F0067325A /* SoWeQuiches */ = {
 			isa = PBXGroup;
 			children = (
-				E3071C5127BE6CD1006BAA28 /* Extensions */,
+				E3071C5F27BE7DE9006BAA28 /* Extensions */,
+				E3071C5127BE6CD1006BAA28 /* Keychain */,
 				E3CE6FE727BBACDE00B2ACB8 /* Service */,
 				E3CE6FDE27BBABA700B2ACB8 /* ViewModel */,
 				E3CE6FDD27BBABA200B2ACB8 /* Model */,
@@ -100,15 +103,15 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		E3071C5127BE6CD1006BAA28 /* Extensions */ = {
+		E3071C5127BE6CD1006BAA28 /* Keychain */ = {
 			isa = PBXGroup;
 			children = (
-				E3CE6FF527BC024300B2ACB8 /* Network+Extensions.swift */,
 				E3071C5227BE6CEE006BAA28 /* KeychainValues.swift */,
 				E3071C5427BE6CF9006BAA28 /* KeychainKey.swift */,
 				E3071C5627BE7339006BAA28 /* KeychainAccess.swift */,
+				E3071C5D27BE7DC3006BAA28 /* AccessTokenKey.swift */,
 			);
-			path = Extensions;
+			path = Keychain;
 			sourceTree = "<group>";
 		};
 		E3071C5C27BE79DC006BAA28 /* Home */ = {
@@ -117,6 +120,14 @@
 				E3071C5A27BE79C9006BAA28 /* HomeViewModel.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		E3071C5F27BE7DE9006BAA28 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E3CE6FF527BC024300B2ACB8 /* Network+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		E3CE6FDC27BBAB9E00B2ACB8 /* Views */ = {
@@ -259,6 +270,7 @@
 				E3071C5327BE6CEE006BAA28 /* KeychainValues.swift in Sources */,
 				E3071C5927BE78B3006BAA28 /* HomeView.swift in Sources */,
 				E3CE6FF427BBE7D600B2ACB8 /* HTTPEndpoint.swift in Sources */,
+				E3071C5E27BE7DC4006BAA28 /* AccessTokenKey.swift in Sources */,
 				E3071C4A27BE4199006BAA28 /* User.swift in Sources */,
 				0375617027BA578F0067325A /* SoWeQuichesApp.swift in Sources */,
 				E3071C5B27BE79C9006BAA28 /* HomeViewModel.swift in Sources */,

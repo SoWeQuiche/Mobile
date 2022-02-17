@@ -7,12 +7,12 @@
 
 import Foundation
 
-public struct User: Decodable {
-    public let mail: String
-    public let firstName: String
-    public let lastName: String
+struct User: Decodable {
+    let mail: String
+    let firstName: String
+    let lastName: String
 
-    public var displayName: String {
+    var displayName: String {
         "\(firstName) \(lastName)"
     }
 }

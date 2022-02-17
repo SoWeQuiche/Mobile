@@ -5,7 +5,7 @@
 //  Created by Zakarya TOLBA on 15/02/2022.
 //
 
-public struct Token: Decodable {
+struct Token: Decodable {
     let token: String
 //    let refreshToken: String
 
