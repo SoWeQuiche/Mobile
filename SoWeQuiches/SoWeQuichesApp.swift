@@ -9,9 +9,20 @@ import SwiftUI
 
 @main
 struct SoWeQuichesApp: App {
+    @Keychained(key: .accessToken) var accessToken
+    @ObservedObject var applicationState: ApplicationState = .shared
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Group {
+                VStack {
+                    if applicationState.state == .authenticated {
+                        HomeView(viewModel: HomeViewModel())
+                    } else {
+                        LoginView(viewModel: LoginViewModel())
+                    }
+                }
+            }
         }
     }
 }
