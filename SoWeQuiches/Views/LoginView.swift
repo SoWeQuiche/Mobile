@@ -7,12 +7,26 @@
 
 import SwiftUI
 
+struct ErrorText: View {
+    let text: String
+    
+    var body: some View {
+        Text(text)
+            .foregroundColor(.red)
+            .padding()
+    }
+}
+
 struct LoginView: View {
     
     @State private var mail: String = ""
     @State private var password: String = ""
-    @State private var emptyFields: Bool = false
+    @State private var formSent : Bool = false
     
+    var hasEmptyField: Bool {
+        return mail.isEmpty || password.isEmpty
+    }
+
     @ObservedObject private var viewModel: LoginViewModel
 
     init(viewModel: LoginViewModel) {
@@ -22,14 +36,12 @@ struct LoginView: View {
     var body: some View {
         NavigationView {
             VStack(alignment: .center, spacing: 0){
-                
-                if emptyFields {
-                    Text("Un ou plusieurs champs sont vides").foregroundColor(.red).padding()
+                if formSent && hasEmptyField {
+                    ErrorText(text: "Un ou plusieurs champs sont vides")
+                } else if formSent && viewModel.wrongCredentials {
+                    ErrorText(text: "Mauvais mot de passe ou adresse mail")
                 }
-                if viewModel.wrongCredentials {
-                    Text("Mauvais mot de passe ou adresse mail").foregroundColor(.red).padding()
-                }
-                
+
                 TextField("Adresse mail", text: $mail)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
@@ -39,15 +51,15 @@ struct LoginView: View {
                 Button(action: {
                     withAnimation {
                         viewModel.wrongCredentials = false
-                        emptyFields = false
-                        if(mail.isEmpty || password.isEmpty) {
-                            emptyFields = true
-                        } else {
+
+                        formSent = true
+                        if !hasEmptyField {
                             viewModel.isLoading = true
                             Task {
-                                try await self.viewModel.login(mail: self.mail, password: self.password)
+                                let test = await self.viewModel.login(mail: self.mail, password: self.password)
                             }
                         }
+
                     }
                 }) {
                 HStack {

@@ -6,8 +6,6 @@
 //
 
 import SwiftUI
-import Combine
-import RetroSwift
 
 class LoginViewModel: ObservableObject {
     @AppStorage("isLoggedIn") var isLoggedIn: Bool = false
@@ -19,8 +17,14 @@ class LoginViewModel: ObservableObject {
         self.userService = userService
     }
     
-    func login(mail: String, password: String) async throws -> [Token] {
-        let dto = LoginDTO(email: mail, password: password)
-        return try await userService.userLogin.call(body: dto)
+    func login(mail: String, password: String) async -> Any {
+        do {
+            let dto = LoginDTO(mail: mail, password: password)
+            let test = try await userService.userLogin.call(body: dto)
+            return test
+        } catch (let error) {
+            print(error)
+            return error
+        }
     }
 }

@@ -9,6 +9,6 @@ import Foundation
 import RetroSwift
 
 final class UserService {
-        @Network<[Token]>(url: "authurl", method: .POST)
-        var userLogin
+    @Network<Token>(endpoint: .login, method: .POST)
+    var userLogin
 }
