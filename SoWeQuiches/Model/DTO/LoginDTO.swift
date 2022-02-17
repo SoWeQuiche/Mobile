@@ -8,6 +8,6 @@
 import Foundation
 
 struct LoginDTO: Encodable {
-    let email: String
+    let mail: String
     let password: String
 }
