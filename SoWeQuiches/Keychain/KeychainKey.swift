@@ -17,12 +17,3 @@ extension KeychainKey {
 
     public static var defaultScope: String { "default" }
 }
-
-struct AccessTokenKey: KeychainKey {
-    static var keyString: String = "AccessToken"
-    static let defaultValue: String? = nil
-}
-
-extension KeychainKey where Self == AccessTokenKey {
-    static var accessToken: Self { .init() }
-}
