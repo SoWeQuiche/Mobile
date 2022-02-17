@@ -6,11 +6,12 @@
 //
 
 import SwiftUI
+import AuthenticationServices
 
 struct LoginView: View {
-
+    
     @StateObject var viewModel: LoginViewModel
-
+    
     var body: some View {
         NavigationView {
             VStack(alignment: .center, spacing: 0) {
@@ -37,19 +38,27 @@ struct LoginView: View {
                             ProgressView().padding(.horizontal, 10).progressViewStyle(CircularProgressViewStyle(tint: Color.white))
                             Text("Chargement...")
                                 .bold()
-                    } else {
-                        Image(systemName: "key.fill")
-                        Text("Connexion")
-                            .bold()
+                        } else {
+                            Image(systemName: "key.fill")
+                            Text("Connexion")
+                                .bold()
+                        }
                     }
-                }}.padding()
+                    
+                }
+                .padding()
                 .foregroundColor(.white)
                 .background(Color.orange)
                 .cornerRadius(.greatestFiniteMagnitude).shadow(color: Color.orange, radius: 5, x: 2, y: 2)
                 .padding(.top, 20)
                 .padding(.trailing, 20)
-                }.padding(.top, 20)
-                .navigationBarTitle("Connexion")
+                
+                SignInWithAppleButton(.signIn,
+                    onRequest: { viewModel.generateRequest($0)},
+                    onCompletion: { viewModel.authenticationComplete($0) })
+            }
+            .padding(.top, 20)
+            .navigationBarTitle("Connexion")
         }
     }
 }

@@ -43,6 +43,7 @@
 		E3071C5A27BE79C9006BAA28 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E3071C5D27BE7DC3006BAA28 /* AccessTokenKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenKey.swift; sourceTree = "<group>"; };
 		E3071C6027BE8910006BAA28 /* ApplicationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationState.swift; sourceTree = "<group>"; };
+		E345E42F27BE91C70037FE51 /* SoWeQuiches.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SoWeQuiches.entitlements; sourceTree = "<group>"; };
 		E3CE6FDF27BBABB300B2ACB8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E3CE6FE127BBABE700B2ACB8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		E3CE6FE827BBAD0500B2ACB8 /* LoginDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDTO.swift; sourceTree = "<group>"; };
@@ -83,6 +84,7 @@
 		0375616E27BA578F0067325A /* SoWeQuiches */ = {
 			isa = PBXGroup;
 			children = (
+				E345E42F27BE91C70037FE51 /* SoWeQuiches.entitlements */,
 				E3071C5F27BE7DE9006BAA28 /* Extensions */,
 				E3071C5127BE6CD1006BAA28 /* Keychain */,
 				E3CE6FE727BBACDE00B2ACB8 /* Service */,
@@ -406,6 +408,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SoWeQuiches/SoWeQuiches.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SoWeQuiches/Preview Content\"";
@@ -435,6 +438,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SoWeQuiches/SoWeQuiches.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SoWeQuiches/Preview Content\"";

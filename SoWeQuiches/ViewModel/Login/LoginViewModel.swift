@@ -6,6 +6,9 @@
 //
 
 import SwiftUI
+import Foundation
+import AuthenticationServices
+import RetroSwift
 
 class LoginViewModel: ObservableObject {
     @ObservedObject var applicationState: ApplicationState = .shared
@@ -51,6 +54,39 @@ class LoginViewModel: ObservableObject {
             }
         }
     }
+    
+    func generateRequest(_ request: ASAuthorizationAppleIDRequest) {
+        request.requestedScopes = [.fullName, .email]
+//        request.nonce = authProvider.generateNonce()
+    }
+
+    func authenticationComplete(_ result: Result<ASAuthorization, Error>) {
+        switch result {
+        case .failure(let error):
+            print(error)
+        case .success(let authorization):
+//            Task { await authenticateWithFirebase(authorization) }
+            guard let credential = authorization.credential as? ASAuthorizationAppleIDCredential,
+                  let identityTokenData = credential.identityToken,
+                  let id_token = String(data: identityTokenData, encoding: .utf8) else {
+                print("ta mère")
+                return
+            }
+
+            let lastname = credential.fullName?.familyName
+            let firstname = credential.fullName?.givenName
+            print(identityToken)
+            
+            
+        }
+    }
+    
+    struct RegisterSWADTO: Encodable {
+        let lastname: String
+        let firstname: String
+        let id_token: String
+    }
+
     
     enum FormError {
         case emptyFields
