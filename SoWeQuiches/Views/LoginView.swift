@@ -27,9 +27,11 @@ struct LoginView: View {
                 }.frame(height: 15)
                 TextField("Adresse mail", text: $viewModel.mail)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .textContentType(.username)
                     .padding()
                 SecureField("Mot de passe", text: $viewModel.password)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .textContentType(.password)
                     .padding()
                 Spacer()
                 Button(action: {

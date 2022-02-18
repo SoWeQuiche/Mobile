@@ -63,13 +63,13 @@ class LoginViewModel: ObservableObject {
         switch result {
         case .failure(let error):
             print(error)
+            formError = .signInWithAppleError
         case .success(let authorization):
             guard let credential = authorization.credential as? ASAuthorizationAppleIDCredential,
                   let identityTokenData = credential.identityToken,
                   let codeData = credential.authorizationCode,
                   let code = String(data: codeData, encoding: .utf8),
                   let id_token = String(data: identityTokenData, encoding: .utf8) else { return }
-      
             let lastname = credential.fullName?.familyName
             let firstname = credential.fullName?.givenName
             let dto = SWADTO(
