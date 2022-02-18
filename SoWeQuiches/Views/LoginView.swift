@@ -31,6 +31,7 @@ struct LoginView: View {
                 SecureField("Mot de passe", text: $viewModel.password)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
+                Spacer()
                 Button(action: {
                     Task {
                         await viewModel.login(mail: self.viewModel.mail, password: self.viewModel.password)
@@ -47,16 +48,14 @@ struct LoginView: View {
                                 .bold()
                         }
                     }
-                    
                 }
                 .padding()
+                .frame(height: 55)
+                .padding(.horizontal, 100)
                 .foregroundColor(.white)
                 .background(Color.orange)
                 .clipShape(Capsule()).shadow(color: Color.orange, radius: 5, x: 2, y: 2)
-                .padding(.top, 20)
-                .frame(height: 55)
-                .padding(.horizontal, 40)
-                Spacer()
+                .padding(.bottom, 25)
                 SignInWithAppleButton(.signIn,
                     onRequest: { viewModel.generateRequest($0)},
                     onCompletion: { viewModel.authenticationComplete($0) })
@@ -64,6 +63,7 @@ struct LoginView: View {
                 .frame(height: 55)
                 .clipShape(Capsule())
                 .padding(.horizontal, 40)
+                .padding(.bottom, 25)
             }
             .padding(.top, 20)
             .navigationBarTitle("Connexion")

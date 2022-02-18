@@ -68,10 +68,7 @@ class LoginViewModel: ObservableObject {
                   let identityTokenData = credential.identityToken,
                   let codeData = credential.authorizationCode,
                   let code = String(data: codeData, encoding: .utf8),
-                  let id_token = String(data: identityTokenData, encoding: .utf8) else {
-                        print("ta mère")
-                        return
-                  }
+                  let id_token = String(data: identityTokenData, encoding: .utf8) else { return }
       
             let lastname = credential.fullName?.familyName
             let firstname = credential.fullName?.givenName
