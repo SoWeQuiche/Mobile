@@ -11,6 +11,7 @@ enum HTTPEndpoint: String {
     var baseURL: String { "https://api.sign.quiches.ovh" }
 
     case login = "/auth/login"
+    case loginApple = "/auth/login/apple-id"
     case me = "/auth/me"
 
     var url: String? {
