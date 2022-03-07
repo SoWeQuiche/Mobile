@@ -34,7 +34,7 @@ public struct KeychainValues {
             do {
                 return try JSONDecoder().decode(Key.Value.self, from: encoded)
             } catch {
-//                AppLog.error(error)
+                print(error)
                 return Key.defaultValue
             }
         }
@@ -47,7 +47,7 @@ public struct KeychainValues {
                     let data = try JSONEncoder().encode(newValue)
                     _ = container.save(key: key, value: data)
                 } catch {
-//                    AppLog.error(error)
+                    print(error)
                 }
             }
         }
