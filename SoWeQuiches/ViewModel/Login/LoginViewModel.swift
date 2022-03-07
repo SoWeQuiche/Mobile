@@ -44,7 +44,7 @@ class LoginViewModel: ObservableObject {
             let dto = LoginDTO(mail: mail, password: password)
             let result = try await userService.userLogin.call(body: dto)
             accessToken = result.token
-            applicationState.state = .authenticated
+            await applicationState.authenticate()
             isLoading = false
         } catch (let error) {
             print(error)
@@ -83,7 +83,7 @@ class LoginViewModel: ObservableObject {
                 do {
                     let result = try await userService.userLoginApple.call(body: dto)
                     accessToken = result.token
-                    applicationState.state = .authenticated
+                    await applicationState.authenticate()
                     isLoading = false
                 } catch (let error) {
                     print(error)
@@ -105,7 +105,7 @@ class LoginViewModel: ObservableObject {
             switch self {
             case .emptyFields: return "Un ou plusieurs champs sont vides"
             case .badCredentials: return "Mauvais mot de passe ou adresse mail"
-            case .signInWithAppleError: return "Erreur de connexion avec Sign In With Apple"
+            case .signInWithAppleError: return "Erreur de connexion avec Sign In with Apple"
             }
         }
     }

@@ -15,8 +15,8 @@ class HomeViewModel: ObservableObject {
     
     init() {}
 
-    func disconnect() {
+    func disconnect() async {
         accessToken = nil
-        applicationState.state = .unauthenticated
+        await applicationState.disconnect()
     }
 }
