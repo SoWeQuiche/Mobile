@@ -105,12 +105,9 @@
 				E3CE6FDD27BBABA200B2ACB8 /* Model */,
 				E3CE6FDC27BBAB9E00B2ACB8 /* Views */,
 				0375616F27BA578F0067325A /* SoWeQuichesApp.swift */,
-				03DB363627BBF24200E4B74B /* CanvasView.swift */,
-				03FE426927BE434500D71AB2 /* DrawingViewModel.swift */,
 				0375617327BA57920067325A /* Assets.xcassets */,
 				0375617527BA57920067325A /* Preview Content */,
 				E3071C6027BE8910006BAA28 /* ApplicationState.swift */,
-				03DB363827BBF27B00E4B74B /* DrawingView.swift */,
 			);
 			path = SoWeQuiches;
 			sourceTree = "<group>";
@@ -163,6 +160,8 @@
 			children = (
 				E3CE6FDF27BBABB300B2ACB8 /* LoginView.swift */,
 				E3071C5827BE78B3006BAA28 /* HomeView.swift */,
+				03DB363827BBF27B00E4B74B /* DrawingView.swift */,
+				03DB363627BBF24200E4B74B /* CanvasView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -189,6 +188,7 @@
 		E3CE6FE627BBACC100B2ACB8 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				03FE426927BE434500D71AB2 /* DrawingViewModel.swift */,
 				E3CE6FE127BBABE700B2ACB8 /* LoginViewModel.swift */,
 			);
 			path = Login;
