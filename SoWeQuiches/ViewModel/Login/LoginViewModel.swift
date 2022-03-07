@@ -25,7 +25,8 @@ class LoginViewModel: ObservableObject {
     init(userService: UserService = UserService()) {
         self.userService = userService
     }
-    
+
+    @MainActor
     func login(mail: String, password: String) async {
         isLoading = true
         

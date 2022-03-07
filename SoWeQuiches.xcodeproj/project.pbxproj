@@ -96,12 +96,9 @@
 				E3CE6FDD27BBABA200B2ACB8 /* Model */,
 				E3CE6FDC27BBAB9E00B2ACB8 /* Views */,
 				0375616F27BA578F0067325A /* SoWeQuichesApp.swift */,
-				03DB363627BBF24200E4B74B /* CanvasView.swift */,
-				03FE426927BE434500D71AB2 /* DrawingViewModel.swift */,
 				0375617327BA57920067325A /* Assets.xcassets */,
 				0375617527BA57920067325A /* Preview Content */,
 				E3071C6027BE8910006BAA28 /* ApplicationState.swift */,
-				03DB363827BBF27B00E4B74B /* DrawingView.swift */,
 			);
 			path = SoWeQuiches;
 			sourceTree = "<group>";
@@ -112,6 +109,39 @@
 				0375617627BA57920067325A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		03FE427127BF95C100D71AB2 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E3071C5827BE78B3006BAA28 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		03FE427227BF95C800D71AB2 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				E3CE6FDF27BBABB300B2ACB8 /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		03FE427327BF95EE00D71AB2 /* Drawing */ = {
+			isa = PBXGroup;
+			children = (
+				03DB363627BBF24200E4B74B /* CanvasView.swift */,
+				03DB363827BBF27B00E4B74B /* DrawingView.swift */,
+			);
+			path = Drawing;
+			sourceTree = "<group>";
+		};
+		03FE427427BF961000D71AB2 /* Drawing */ = {
+			isa = PBXGroup;
+			children = (
+				03FE426927BE434500D71AB2 /* DrawingViewModel.swift */,
+			);
+			path = Drawing;
 			sourceTree = "<group>";
 		};
 		E3071C5127BE6CD1006BAA28 /* Keychain */ = {
@@ -144,8 +174,9 @@
 		E3CE6FDC27BBAB9E00B2ACB8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E3CE6FDF27BBABB300B2ACB8 /* LoginView.swift */,
-				E3071C5827BE78B3006BAA28 /* HomeView.swift */,
+				03FE427127BF95C100D71AB2 /* Home */,
+				03FE427227BF95C800D71AB2 /* Login */,
+				03FE427327BF95EE00D71AB2 /* Drawing */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -165,6 +196,7 @@
 			children = (
 				E3071C5C27BE79DC006BAA28 /* Home */,
 				E3CE6FE627BBACC100B2ACB8 /* Login */,
+				03FE427427BF961000D71AB2 /* Drawing */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
