@@ -25,13 +25,21 @@ struct LoginView: View {
                             .padding()
                     }
                 }.frame(height: 15)
-                TextField("Adresse mail", text: $viewModel.mail)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .textContentType(.username)
+                TextField("e-mail", text: $viewModel.mail)
+                    .preferredColorScheme(.dark)
+                    .padding(.vertical, 12)
+                    .padding(.leading, 30)
+                    .background(Color(UIColor(red: 52/255, green: 52/255, blue: 58/255, alpha: 100))).cornerRadius(5)
+                    .foregroundColor(.white)
+                    .font(.headline.weight(.semibold))
                     .padding()
-                SecureField("Mot de passe", text: $viewModel.password)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .textContentType(.password)
+                SecureField("mot de passe", text: $viewModel.password)
+                    .preferredColorScheme(.dark)
+                    .padding(.vertical, 12)
+                    .padding(.leading, 30)
+                    .background(Color(UIColor(red: 52/255, green: 52/255, blue: 58/255, alpha: 100))).cornerRadius(5)
+                    .foregroundColor(.white)
+                    .font(.headline.weight(.semibold))
                     .padding()
                 Spacer()
                 Button(action: {
@@ -51,24 +59,24 @@ struct LoginView: View {
                         }
                     }
                 }
-                .padding()
                 .frame(height: 55)
                 .padding(.horizontal, 100)
                 .foregroundColor(.white)
-                .background(Color.orange)
-                .clipShape(Capsule()).shadow(color: Color.orange, radius: 5, x: 2, y: 2)
+                .background(Color(UIColor(red: 240/255, green: 188/255, blue: 2/255, alpha: 100)))
+                .clipShape(Capsule())
                 .padding(.bottom, 25)
                 SignInWithAppleButton(.signIn,
                     onRequest: { viewModel.generateRequest($0)},
                     onCompletion: { viewModel.authenticationComplete($0) })
-                .signInWithAppleButtonStyle(colorScheme == .dark ? .white : .black)
+                .signInWithAppleButtonStyle(.white)
                 .frame(height: 55)
                 .clipShape(Capsule())
                 .padding(.horizontal, 40)
                 .padding(.bottom, 25)
             }
             .padding(.top, 20)
-            .navigationBarTitle("Connexion")
+            .navigationBarTitle("So We Quiches")
+            .background(Color(UIColor(red: 23/255, green: 23/255, blue: 26/255, alpha: 100)))
         }
     }
 }
