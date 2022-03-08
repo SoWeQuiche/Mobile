@@ -12,7 +12,7 @@ struct HomeView: View {
     
     var body: some View {
         Button("Disconnect") {
-            viewModel.disconnect()
+            Task { await viewModel.disconnect() } 
         }
     }
 }

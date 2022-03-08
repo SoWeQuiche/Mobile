@@ -9,20 +9,23 @@ import SwiftUI
 
 @main
 struct SoWeQuichesApp: App {
-    @Keychained(key: .accessToken) var accessToken
     @ObservedObject var applicationState: ApplicationState = .shared
     
     var body: some Scene {
         WindowGroup {
-            Group {
-                VStack {
-                    if applicationState.state == .authenticated {
-                        HomeView(viewModel: HomeViewModel())
-                    } else {
-                        LoginView(viewModel: LoginViewModel())
+            VStack {
+                if applicationState.state == .authenticated {
+                    HomeView(viewModel: HomeViewModel())
+                } else if applicationState.state == .loading {
+                    HStack {
+                        ProgressView().padding(.horizontal, 10).progressViewStyle(CircularProgressViewStyle(tint: Color.white))
+                        Text("Chargement...")
+                            .bold()
                     }
+                } else {
+                    LoginView(viewModel: LoginViewModel())
                 }
-            }
+            }.task { await applicationState.openApp() }
         }
     }
 }

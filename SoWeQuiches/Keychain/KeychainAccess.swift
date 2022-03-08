@@ -69,19 +69,19 @@ public class KeychainWrapper: KeychainAccess {
 
             let statusUpdate: OSStatus = SecItemUpdate(keychainQuery, attributesToUpdate)
             if statusUpdate != errSecSuccess {
-//                AppLog.error("tokens not updated")
+                print("tokens not updated")
                 return false
             } else {
-//                AppLog.debug("\(key.account) saved")
+                print("\(key.account) saved")
             }
         } else if statusSearch == errSecItemNotFound { // if new, add
             keychainQuery[kSecValueData as String] = value
             let statusAdd: OSStatus = SecItemAdd(keychainQuery, nil)
             if statusAdd != errSecSuccess {
-//                AppLog.error("tokens not saved")
+                print("tokens not updated")
                 return false
             } else {
-//                AppLog.debug("\(key.account) saved")
+                print("\(key.account) saved")
             }
         } else { // error case
             return false
