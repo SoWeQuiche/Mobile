@@ -25,6 +25,8 @@
 		E3071C5E27BE7DC4006BAA28 /* AccessTokenKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3071C5D27BE7DC3006BAA28 /* AccessTokenKey.swift */; };
 		E3071C6127BE8910006BAA28 /* ApplicationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3071C6027BE8910006BAA28 /* ApplicationState.swift */; };
 		E345E43127BEEFBC0037FE51 /* SWADTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E345E43027BEEFBC0037FE51 /* SWADTO.swift */; };
+		E352C55127D7A3B900B3ECDA /* RefreshTokenKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E352C55027D7A3B900B3ECDA /* RefreshTokenKey.swift */; };
+		E352C55427D7A5D900B3ECDA /* JWTDecode in Frameworks */ = {isa = PBXBuildFile; productRef = E352C55327D7A5D900B3ECDA /* JWTDecode */; };
 		E3BF270827BFAD9200BC83F0 /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3BF270727BFAD9200BC83F0 /* AuthenticationServices.framework */; };
 		E3CE6FE027BBABB300B2ACB8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CE6FDF27BBABB300B2ACB8 /* LoginView.swift */; };
 		E3CE6FE227BBABE700B2ACB8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CE6FE127BBABE700B2ACB8 /* LoginViewModel.swift */; };
@@ -54,6 +56,7 @@
 		E3071C6027BE8910006BAA28 /* ApplicationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationState.swift; sourceTree = "<group>"; };
 		E345E42F27BE91C70037FE51 /* SoWeQuiches.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SoWeQuiches.entitlements; sourceTree = "<group>"; };
 		E345E43027BEEFBC0037FE51 /* SWADTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWADTO.swift; sourceTree = "<group>"; };
+		E352C55027D7A3B900B3ECDA /* RefreshTokenKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenKey.swift; sourceTree = "<group>"; };
 		E3BF270727BFAD9200BC83F0 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
 		E3CE6FDF27BBABB300B2ACB8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E3CE6FE127BBABE700B2ACB8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -72,6 +75,7 @@
 				E3BF270827BFAD9200BC83F0 /* AuthenticationServices.framework in Frameworks */,
 				03FE426D27BE513C00D71AB2 /* netfox in Frameworks */,
 				8750D29A27BEADA900B67709 /* RetroSwift in Frameworks */,
+				E352C55427D7A5D900B3ECDA /* JWTDecode in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +141,7 @@
 				E3071C5427BE6CF9006BAA28 /* KeychainKey.swift */,
 				E3071C5627BE7339006BAA28 /* KeychainAccess.swift */,
 				E3071C5D27BE7DC3006BAA28 /* AccessTokenKey.swift */,
+				E352C55027D7A3B900B3ECDA /* RefreshTokenKey.swift */,
 			);
 			path = Keychain;
 			sourceTree = "<group>";
@@ -240,7 +245,8 @@
 			name = SoWeQuiches;
 			packageProductDependencies = (
 				03FE426C27BE513C00D71AB2 /* netfox */,
-				8750D29927BEADA900B67709 /* RetroSwift */,
+				E3CE6FE427BBAC7700B2ACB8 /* RetroSwift */,
+				E352C55327D7A5D900B3ECDA /* JWTDecode */,
 			);
 			productName = SoWeQuiches;
 			productReference = 0375616C27BA578F0067325A /* SoWeQuiches.app */;
@@ -272,7 +278,8 @@
 			mainGroup = 0375616327BA578F0067325A;
 			packageReferences = (
 				03FE426B27BE513B00D71AB2 /* XCRemoteSwiftPackageReference "netfox" */,
-				8750D29827BEADA900B67709 /* XCRemoteSwiftPackageReference "RetroSwift" */,
+				E3CE6FE327BBAC7700B2ACB8 /* XCRemoteSwiftPackageReference "RetroSwift" */,
+				E352C55227D7A5D900B3ECDA /* XCRemoteSwiftPackageReference "JWTDecode.swift" */,
 			);
 			productRefGroup = 0375616D27BA578F0067325A /* Products */;
 			projectDirPath = "";
@@ -308,6 +315,7 @@
 				E3CE6FF127BBB03400B2ACB8 /* UserService.swift in Sources */,
 				E3071C5527BE6CF9006BAA28 /* KeychainKey.swift in Sources */,
 				E3CE6FF627BC024300B2ACB8 /* Network+Extensions.swift in Sources */,
+				E352C55127D7A3B900B3ECDA /* RefreshTokenKey.swift in Sources */,
 				E3CE6FE927BBAD0500B2ACB8 /* LoginDTO.swift in Sources */,
 				E3071C5327BE6CEE006BAA28 /* KeychainValues.swift in Sources */,
 				E3071C5927BE78B3006BAA28 /* HomeView.swift in Sources */,
@@ -527,6 +535,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E352C55227D7A5D900B3ECDA /* XCRemoteSwiftPackageReference "JWTDecode.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/auth0/JWTDecode.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		03FE426B27BE513B00D71AB2 /* XCRemoteSwiftPackageReference "netfox" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kasketis/netfox";
@@ -551,7 +567,12 @@
 			package = 03FE426B27BE513B00D71AB2 /* XCRemoteSwiftPackageReference "netfox" */;
 			productName = netfox;
 		};
-		8750D29927BEADA900B67709 /* RetroSwift */ = {
+		E352C55327D7A5D900B3ECDA /* JWTDecode */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E352C55227D7A5D900B3ECDA /* XCRemoteSwiftPackageReference "JWTDecode.swift" */;
+			productName = JWTDecode;
+		};
+		E3CE6FE427BBAC7700B2ACB8 /* RetroSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8750D29827BEADA900B67709 /* XCRemoteSwiftPackageReference "RetroSwift" */;
 			productName = RetroSwift;

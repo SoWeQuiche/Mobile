@@ -7,5 +7,9 @@
 
 struct Token: Decodable {
     let token: String
-//    let refreshToken: String
+    let refreshToken: String
+}
+
+struct RefreshToken: Encodable {
+    let refreshToken: String
 }
