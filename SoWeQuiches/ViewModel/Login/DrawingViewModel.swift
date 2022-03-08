@@ -11,6 +11,11 @@ import RetroSwift
 
 class DrawingViewModel: ObservableObject {
 
+    init(attendance: Attendance) {
+        self.attendance = attendance
+    }
+
+    var attendance: Attendance
     @Published var canvasView = PKCanvasView()
     @Published var image = UIImage()
 

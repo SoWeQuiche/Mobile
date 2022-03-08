@@ -76,7 +76,7 @@ struct LoginView: View {
             }
             .padding(.top, 20)
             .navigationBarTitle("So We Quiches")
-            .background(Color(UIColor(red: 23/255, green: 23/255, blue: 26/255, alpha: 100)))
+            .background(Color("background"))
         }
     }
 }
