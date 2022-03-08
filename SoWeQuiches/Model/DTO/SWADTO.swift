@@ -10,7 +10,7 @@ import Foundation
 struct SWADTO: Codable {
     
     let authorization: SWAAuthorizationDTO
-    let user: SWAUserDTO
+    let user: SWAUserDTO?
     
     init (code: String, idToken: String, email: String?, firstname: String?, lastname: String?) {
         authorization = .init(code: code, id_token: idToken)
@@ -20,7 +20,16 @@ struct SWADTO: Codable {
 
 struct SWAUserDTO: Codable {
     let email: String?
-    let name: SWAUserNameDTO
+    let name: SWAUserNameDTO?
+    
+    init?(email: String?, name: SWAUserNameDTO?) {
+        guard let email = email, let name = name else {
+            return nil
+        }
+
+        self.email = email
+        self.name = name
+    }
 }
 
 struct SWAAuthorizationDTO: Codable {
@@ -32,6 +41,15 @@ struct SWAAuthorizationDTO: Codable {
 struct SWAUserNameDTO: Codable {
     let lastname: String?
     let firstname: String?
+
+    init?(lastname: String?, firstname: String?) {
+        guard let lastname = lastname, let firstname = firstname else {
+            return nil
+        }
+
+        self.lastname = lastname
+        self.firstname = firstname
+    }
     
     enum CodingKeys: String, CodingKey {
         case firstname = "firstName"
