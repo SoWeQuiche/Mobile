@@ -58,15 +58,13 @@ struct LoginView: View {
                             Text("Connexion")
                                 .bold()
                         }
-                    }
+                    }.frame(maxWidth: .infinity, maxHeight: 55)
+                    .foregroundColor(.white)
+                    .background(Color("orange"))
+                    .clipShape(Capsule())
+                    .padding(.horizontal, 30)
+                    .padding(.bottom, 25)
                 }
-                .padding()
-                .frame(maxWidth: .infinity, maxHeight: 55)
-                .foregroundColor(.white)
-                .background(Color(UIColor(red: 240/255, green: 188/255, blue: 2/255, alpha: 100)))
-                .clipShape(Capsule())
-                .padding(.horizontal, 30)
-                .padding(.bottom, 25)
                 SignInWithAppleButton(.signIn,
                     onRequest: { viewModel.generateRequest($0)},
                     onCompletion: { viewModel.authenticationComplete($0) })
