@@ -7,10 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0375446D27D7652D009D7196 /* Attendance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375446C27D7652D009D7196 /* Attendance.swift */; };
 		0375617027BA578F0067325A /* SoWeQuichesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375616F27BA578F0067325A /* SoWeQuichesApp.swift */; };
-		0375617227BA578F0067325A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375617127BA578F0067325A /* ContentView.swift */; };
 		0375617427BA57920067325A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0375617327BA57920067325A /* Assets.xcassets */; };
 		0375617727BA57920067325A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0375617627BA57920067325A /* Preview Assets.xcassets */; };
+		03DB363727BBF24200E4B74B /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DB363627BBF24200E4B74B /* CanvasView.swift */; };
+		03DB363927BBF27B00E4B74B /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DB363827BBF27B00E4B74B /* DrawingView.swift */; };
+		03FE426A27BE434500D71AB2 /* DrawingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FE426927BE434500D71AB2 /* DrawingViewModel.swift */; };
+		03FE426D27BE513C00D71AB2 /* netfox in Frameworks */ = {isa = PBXBuildFile; productRef = 03FE426C27BE513C00D71AB2 /* netfox */; };
+		8750D29A27BEADA900B67709 /* RetroSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8750D29927BEADA900B67709 /* RetroSwift */; };
 		E3071C4A27BE4199006BAA28 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3071C4927BE4199006BAA28 /* User.swift */; };
 		E3071C5327BE6CEE006BAA28 /* KeychainValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3071C5227BE6CEE006BAA28 /* KeychainValues.swift */; };
 		E3071C5527BE6CF9006BAA28 /* KeychainKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3071C5427BE6CF9006BAA28 /* KeychainKey.swift */; };
@@ -23,7 +28,6 @@
 		E3BF270827BFAD9200BC83F0 /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3BF270727BFAD9200BC83F0 /* AuthenticationServices.framework */; };
 		E3CE6FE027BBABB300B2ACB8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CE6FDF27BBABB300B2ACB8 /* LoginView.swift */; };
 		E3CE6FE227BBABE700B2ACB8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CE6FE127BBABE700B2ACB8 /* LoginViewModel.swift */; };
-		E3CE6FE527BBAC7700B2ACB8 /* RetroSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E3CE6FE427BBAC7700B2ACB8 /* RetroSwift */; };
 		E3CE6FE927BBAD0500B2ACB8 /* LoginDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CE6FE827BBAD0500B2ACB8 /* LoginDTO.swift */; };
 		E3CE6FEF27BBADC000B2ACB8 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CE6FEE27BBADC000B2ACB8 /* Token.swift */; };
 		E3CE6FF127BBB03400B2ACB8 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CE6FF027BBB03400B2ACB8 /* UserService.swift */; };
@@ -32,11 +36,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0375446C27D7652D009D7196 /* Attendance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attendance.swift; sourceTree = "<group>"; };
 		0375616C27BA578F0067325A /* SoWeQuiches.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoWeQuiches.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0375616F27BA578F0067325A /* SoWeQuichesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoWeQuichesApp.swift; sourceTree = "<group>"; };
-		0375617127BA578F0067325A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0375617327BA57920067325A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0375617627BA57920067325A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		03DB363627BBF24200E4B74B /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
+		03DB363827BBF27B00E4B74B /* DrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
+		03FE426927BE434500D71AB2 /* DrawingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingViewModel.swift; sourceTree = "<group>"; };
 		E3071C4927BE4199006BAA28 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E3071C5227BE6CEE006BAA28 /* KeychainValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainValues.swift; sourceTree = "<group>"; };
 		E3071C5427BE6CF9006BAA28 /* KeychainKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainKey.swift; sourceTree = "<group>"; };
@@ -63,13 +70,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3BF270827BFAD9200BC83F0 /* AuthenticationServices.framework in Frameworks */,
-				E3CE6FE527BBAC7700B2ACB8 /* RetroSwift in Frameworks */,
+				03FE426D27BE513C00D71AB2 /* netfox in Frameworks */,
+				8750D29A27BEADA900B67709 /* RetroSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0375446B27D7651C009D7196 /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				0375446C27D7652D009D7196 /* Attendance.swift */,
+			);
+			path = Additions;
+			sourceTree = "<group>";
+		};
 		0375616327BA578F0067325A = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +106,7 @@
 		0375616E27BA578F0067325A /* SoWeQuiches */ = {
 			isa = PBXGroup;
 			children = (
+				0375446B27D7651C009D7196 /* Additions */,
 				E345E42F27BE91C70037FE51 /* SoWeQuiches.entitlements */,
 				E3071C5F27BE7DE9006BAA28 /* Extensions */,
 				E3071C5127BE6CD1006BAA28 /* Keychain */,
@@ -98,7 +115,6 @@
 				E3CE6FDD27BBABA200B2ACB8 /* Model */,
 				E3CE6FDC27BBAB9E00B2ACB8 /* Views */,
 				0375616F27BA578F0067325A /* SoWeQuichesApp.swift */,
-				0375617127BA578F0067325A /* ContentView.swift */,
 				0375617327BA57920067325A /* Assets.xcassets */,
 				0375617527BA57920067325A /* Preview Content */,
 				E3071C6027BE8910006BAA28 /* ApplicationState.swift */,
@@ -154,6 +170,8 @@
 			children = (
 				E3CE6FDF27BBABB300B2ACB8 /* LoginView.swift */,
 				E3071C5827BE78B3006BAA28 /* HomeView.swift */,
+				03DB363827BBF27B00E4B74B /* DrawingView.swift */,
+				03DB363627BBF24200E4B74B /* CanvasView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -180,6 +198,7 @@
 		E3CE6FE627BBACC100B2ACB8 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				03FE426927BE434500D71AB2 /* DrawingViewModel.swift */,
 				E3CE6FE127BBABE700B2ACB8 /* LoginViewModel.swift */,
 			);
 			path = Login;
@@ -220,7 +239,8 @@
 			);
 			name = SoWeQuiches;
 			packageProductDependencies = (
-				E3CE6FE427BBAC7700B2ACB8 /* RetroSwift */,
+				03FE426C27BE513C00D71AB2 /* netfox */,
+				8750D29927BEADA900B67709 /* RetroSwift */,
 			);
 			productName = SoWeQuiches;
 			productReference = 0375616C27BA578F0067325A /* SoWeQuiches.app */;
@@ -251,7 +271,8 @@
 			);
 			mainGroup = 0375616327BA578F0067325A;
 			packageReferences = (
-				E3CE6FE327BBAC7700B2ACB8 /* XCRemoteSwiftPackageReference "RetroSwift" */,
+				03FE426B27BE513B00D71AB2 /* XCRemoteSwiftPackageReference "netfox" */,
+				8750D29827BEADA900B67709 /* XCRemoteSwiftPackageReference "RetroSwift" */,
 			);
 			productRefGroup = 0375616D27BA578F0067325A /* Products */;
 			projectDirPath = "";
@@ -282,8 +303,8 @@
 				E345E43127BEEFBC0037FE51 /* SWADTO.swift in Sources */,
 				E3CE6FE227BBABE700B2ACB8 /* LoginViewModel.swift in Sources */,
 				E3CE6FEF27BBADC000B2ACB8 /* Token.swift in Sources */,
+				0375446D27D7652D009D7196 /* Attendance.swift in Sources */,
 				E3CE6FE027BBABB300B2ACB8 /* LoginView.swift in Sources */,
-				0375617227BA578F0067325A /* ContentView.swift in Sources */,
 				E3CE6FF127BBB03400B2ACB8 /* UserService.swift in Sources */,
 				E3071C5527BE6CF9006BAA28 /* KeychainKey.swift in Sources */,
 				E3CE6FF627BC024300B2ACB8 /* Network+Extensions.swift in Sources */,
@@ -297,6 +318,9 @@
 				E3071C5B27BE79C9006BAA28 /* HomeViewModel.swift in Sources */,
 				E3071C5727BE7339006BAA28 /* KeychainAccess.swift in Sources */,
 				E3071C6127BE8910006BAA28 /* ApplicationState.swift in Sources */,
+				03FE426A27BE434500D71AB2 /* DrawingViewModel.swift in Sources */,
+				03DB363727BBF24200E4B74B /* CanvasView.swift in Sources */,
+				03DB363927BBF27B00E4B74B /* DrawingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,20 +527,33 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		E3CE6FE327BBAC7700B2ACB8 /* XCRemoteSwiftPackageReference "RetroSwift" */ = {
+		03FE426B27BE513B00D71AB2 /* XCRemoteSwiftPackageReference "netfox" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kasketis/netfox";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		8750D29827BEADA900B67709 /* XCRemoteSwiftPackageReference "RetroSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/MaxenceMottard/RetroSwift";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.2.0;
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.3.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E3CE6FE427BBAC7700B2ACB8 /* RetroSwift */ = {
+		03FE426C27BE513C00D71AB2 /* netfox */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E3CE6FE327BBAC7700B2ACB8 /* XCRemoteSwiftPackageReference "RetroSwift" */;
+			package = 03FE426B27BE513B00D71AB2 /* XCRemoteSwiftPackageReference "netfox" */;
+			productName = netfox;
+		};
+		8750D29927BEADA900B67709 /* RetroSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8750D29827BEADA900B67709 /* XCRemoteSwiftPackageReference "RetroSwift" */;
 			productName = RetroSwift;
 		};
 /* End XCSwiftPackageProductDependency section */

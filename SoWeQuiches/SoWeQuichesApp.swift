@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import netfox
 
 @main
 struct SoWeQuichesApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @ObservedObject var applicationState: ApplicationState = .shared
-    
+
     var body: some Scene {
         WindowGroup {
             VStack {
@@ -27,5 +29,14 @@ struct SoWeQuichesApp: App {
                 }
             }.task { await applicationState.openApp() }
         }
+    }
+}
+
+class AppDelegate: NSObject, UIApplicationDelegate {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+#if DEBUG
+        NFX.sharedInstance().start()
+#endif
+        return true
     }
 }
