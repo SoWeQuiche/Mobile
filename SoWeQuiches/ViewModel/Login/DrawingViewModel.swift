@@ -31,6 +31,10 @@ class DrawingViewModel: ObservableObject {
             print(error)
         }
     }
+
+    func cleanSignature() {
+        canvasView.drawing = PKDrawing()
+    }
 }
 
 extension PKCanvasView {

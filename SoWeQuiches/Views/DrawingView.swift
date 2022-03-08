@@ -25,10 +25,19 @@ struct DrawingView: View {
                 .font(.title2)
 
             Spacer()
-            VStack {
-                CanvasView(canvasView: $viewModel.canvasView)
-            }
+
+            CanvasView(canvasView: $viewModel.canvasView)
             .frame(maxWidth: .infinity, maxHeight: 400)
+
+            Button(action: {
+                viewModel.cleanSignature()
+            }) {
+                Text("Effacer ma signature")
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical)
+            }
+            .foregroundColor(.white)
+            .cornerRadius(50)
 
             Spacer()
 
