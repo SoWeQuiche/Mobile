@@ -7,6 +7,7 @@
 
 import Foundation
 import RetroSwift
+import JWTDecode
 
 extension Network {
     init(
@@ -29,12 +30,22 @@ extension Network {
     
 private class JWTNetworkRequestInterceptor: NetworkRequestInterceptor {
     @Keychained(key: .accessToken) var accessToken
-
+    @Keychained(key: .refreshToken) var refreshToken
+    
     func intercept(_ request: inout URLRequest) async throws {
-        guard let token = accessToken else {
+        guard var token = accessToken, let safeRefreshToken = refreshToken, let decodedToken = try? decode(jwt: token) else {
             throw NetworkError.custom("NO_AVAILABLE_TOKEN")
         }
 
+        if decodedToken.expired {
+            let dto = RefreshToken(refreshToken: safeRefreshToken)
+            let userService = UserService()
+            let result = try await userService.refreshToken.call(body: dto)
+            token = result.token
+            accessToken = result.token
+            refreshToken = result.refreshToken
+        }
+        
         request.addValue("Bearer \(token)", forHTTPHeaderField: "authorization")
     }
 }

@@ -13,6 +13,7 @@ import RetroSwift
 class LoginViewModel: ObservableObject {
     @ObservedObject var applicationState: ApplicationState = .shared
     @Keychained(key: .accessToken) var accessToken
+    @Keychained(key: .refreshToken) var refreshToken
     
     @Published var isLoading: Bool = false
     @Published var formError: FormError?
@@ -44,6 +45,7 @@ class LoginViewModel: ObservableObject {
             let dto = LoginDTO(mail: mail, password: password)
             let result = try await userService.userLogin.call(body: dto)
             accessToken = result.token
+            refreshToken = result.refreshToken
             await applicationState.authenticate()
             isLoading = false
         } catch (let error) {

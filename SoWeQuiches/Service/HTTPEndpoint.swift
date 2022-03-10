@@ -12,6 +12,7 @@ enum HTTPEndpoint: String {
 
     case login = "/auth/login"
     case loginApple = "/auth/login/apple-id"
+    case refreshToken = "/auth/refresh"
     case me = "/auth/me"
     case fileUpload = "/files/upload"
 
