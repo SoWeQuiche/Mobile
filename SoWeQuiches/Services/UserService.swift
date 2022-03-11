@@ -17,7 +17,10 @@ struct UserService {
     
     @Network<TokenResponse>(endpoint: .loginApple, method: .POST)
     var userLoginApple
-    
+
     @Network<User>(authenticated: .me, method: .GET)
     var getMe
+
+    @Network<Void>(authenticated: .registerDevice, method: .POST)
+    var registerDevice
 }

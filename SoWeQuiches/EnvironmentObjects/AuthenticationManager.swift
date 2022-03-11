@@ -23,11 +23,9 @@ class AuthenticationManager: ObservableObject {
         }
     }
 
-    func login(tokenResponse: TokenResponse) async{
+    func login(tokenResponse: TokenResponse) async {
         self.accessToken = tokenResponse.token
         self.refreshToken = tokenResponse.refreshToken
-
-        await authenticate()
     }
 
     func authenticate() async {

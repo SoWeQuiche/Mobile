@@ -26,6 +26,8 @@
 		87DCF83027DB3D8200446457 /* SignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DCF82F27DB3D8200446457 /* SignView.swift */; };
 		87DCF83227DB43C800446457 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DCF83127DB43C800446457 /* CanvasView.swift */; };
 		87DCF83527DB453900446457 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 87DCF83427DB453900446457 /* CodeScanner */; };
+		87DCF83727DBA52A00446457 /* ApnDeviceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DCF83627DBA52A00446457 /* ApnDeviceKey.swift */; };
+		87DCF83927DBA88500446457 /* RegisterApnDeviceDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DCF83827DBA88500446457 /* RegisterApnDeviceDTO.swift */; };
 		E3071C4A27BE4199006BAA28 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3071C4927BE4199006BAA28 /* User.swift */; };
 		E3071C5327BE6CEE006BAA28 /* KeychainValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3071C5227BE6CEE006BAA28 /* KeychainValues.swift */; };
 		E3071C5527BE6CF9006BAA28 /* KeychainKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3071C5427BE6CF9006BAA28 /* KeychainKey.swift */; };
@@ -67,6 +69,8 @@
 		87DCF82C27DAC28B00446457 /* Button+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button+Extensions.swift"; sourceTree = "<group>"; };
 		87DCF82F27DB3D8200446457 /* SignView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignView.swift; sourceTree = "<group>"; };
 		87DCF83127DB43C800446457 /* CanvasView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
+		87DCF83627DBA52A00446457 /* ApnDeviceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApnDeviceKey.swift; sourceTree = "<group>"; };
+		87DCF83827DBA88500446457 /* RegisterApnDeviceDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterApnDeviceDTO.swift; sourceTree = "<group>"; };
 		E3071C4927BE4199006BAA28 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E3071C5227BE6CEE006BAA28 /* KeychainValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainValues.swift; sourceTree = "<group>"; };
 		E3071C5427BE6CF9006BAA28 /* KeychainKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainKey.swift; sourceTree = "<group>"; };
@@ -224,6 +228,7 @@
 				E3071C5427BE6CF9006BAA28 /* KeychainKey.swift */,
 				E3071C5627BE7339006BAA28 /* KeychainAccess.swift */,
 				E3071C5D27BE7DC3006BAA28 /* AccessTokenKey.swift */,
+				87DCF83627DBA52A00446457 /* ApnDeviceKey.swift */,
 				E352C55027D7A3B900B3ECDA /* RefreshTokenKey.swift */,
 			);
 			path = Keychain;
@@ -289,6 +294,7 @@
 				E3CE6FE827BBAD0500B2ACB8 /* LoginDTO.swift */,
 				E345E43027BEEFBC0037FE51 /* SWADTO.swift */,
 				032DE8E527DB9BF2004B2337 /* SignRequestDTO.swift */,
+				87DCF83827DBA88500446457 /* RegisterApnDeviceDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -383,6 +389,7 @@
 				E3CE6FE027BBABB300B2ACB8 /* LoginView.swift in Sources */,
 				87DCF82D27DAC28B00446457 /* Button+Extensions.swift in Sources */,
 				87DCF81D27DA55E800446457 /* Collection+Extensions.swift in Sources */,
+				87DCF83727DBA52A00446457 /* ApnDeviceKey.swift in Sources */,
 				E3CE6FF127BBB03400B2ACB8 /* UserService.swift in Sources */,
 				E3071C5527BE6CF9006BAA28 /* KeychainKey.swift in Sources */,
 				87DCF82527DAB9E500446457 /* SignView+Logic.swift in Sources */,
@@ -391,6 +398,7 @@
 				E3CE6FE927BBAD0500B2ACB8 /* LoginDTO.swift in Sources */,
 				E3071C5327BE6CEE006BAA28 /* KeychainValues.swift in Sources */,
 				E3071C5927BE78B3006BAA28 /* HomeView.swift in Sources */,
+				87DCF83927DBA88500446457 /* RegisterApnDeviceDTO.swift in Sources */,
 				87DCF83027DB3D8200446457 /* SignView.swift in Sources */,
 				87DCF82927DABCC000446457 /* PKCanvasView+Extensions.swift in Sources */,
 				E3CE6FF427BBE7D600B2ACB8 /* HTTPEndpoint.swift in Sources */,

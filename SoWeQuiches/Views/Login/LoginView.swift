@@ -11,6 +11,7 @@ import AuthenticationServices
 struct LoginView: View {
     @EnvironmentObject var applicationState: AuthenticationManager
     @Environment(\.colorScheme) private var colorScheme
+    @Keychained(key: .apnDevice) var apnDevice
 
     let userService: UserService = .init()
 

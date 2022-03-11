@@ -17,6 +17,7 @@ enum HTTPEndpoint: String {
     case fileUpload = "/files/upload"
     case timeslots = "/timeslots/me"
     case sign = "/attendances/:attendanceId/sign"
+    case registerDevice = "/notifications/device"
 
     var url: String? {
         URL(string: baseURL)?.appendingPathComponent(self.rawValue).absoluteString

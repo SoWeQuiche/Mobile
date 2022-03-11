@@ -25,6 +25,9 @@ extension LoginView {
             let dto = LoginDTO(mail: mail, password: password)
             let response = try await userService.userLogin.call(body: dto)
             await applicationState.login(tokenResponse: response)
+            let registerDto = RegisterApnDeviceDTO(deviceId: apnDevice ?? "")
+            try await userService.registerDevice.call(body: registerDto)
+            await applicationState.authenticate()
         } catch(_) {
             withAnimation {
                 isLoading = false
@@ -60,6 +63,9 @@ extension LoginView {
         do {
             let response = try await userService.userLoginApple.call(body: dto)
             await applicationState.login(tokenResponse: response)
+            let registerDto = RegisterApnDeviceDTO(deviceId: apnDevice ?? "")
+            try await userService.registerDevice.call(body: registerDto)
+            await applicationState.authenticate()
             isLoading = false
         } catch(_) {
             withAnimation {
