@@ -37,6 +37,7 @@
 		E352C55127D7A3B900B3ECDA /* RefreshTokenKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E352C55027D7A3B900B3ECDA /* RefreshTokenKey.swift */; };
 		E352C55427D7A5D900B3ECDA /* JWTDecode in Frameworks */ = {isa = PBXBuildFile; productRef = E352C55327D7A5D900B3ECDA /* JWTDecode */; };
 		E352C55827D7B4C300B3ECDA /* RetroSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E352C55727D7B4C300B3ECDA /* RetroSwift */; };
+		E380AB9E27DB9D570039D3A7 /* Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = E380AB9D27DB9D570039D3A7 /* Blur.swift */; };
 		E3BF270827BFAD9200BC83F0 /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3BF270727BFAD9200BC83F0 /* AuthenticationServices.framework */; };
 		E3CE6FE027BBABB300B2ACB8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CE6FDF27BBABB300B2ACB8 /* LoginView.swift */; };
 		E3CE6FE927BBAD0500B2ACB8 /* LoginDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CE6FE827BBAD0500B2ACB8 /* LoginDTO.swift */; };
@@ -80,6 +81,7 @@
 		E352C54627D7528800B3ECDA /* QrCodeCameraDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCodeCameraDelegate.swift; sourceTree = "<group>"; };
 		E352C54C27D753F700B3ECDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		E352C55027D7A3B900B3ECDA /* RefreshTokenKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenKey.swift; sourceTree = "<group>"; };
+		E380AB9D27DB9D570039D3A7 /* Blur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blur.swift; sourceTree = "<group>"; };
 		E3BF270727BFAD9200BC83F0 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
 		E3CE6FDF27BBABB300B2ACB8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E3CE6FE827BBAD0500B2ACB8 /* LoginDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDTO.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				87DCF83127DB43C800446457 /* CanvasView.swift */,
+				E380AB9D27DB9D570039D3A7 /* Blur.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E380AB9E27DB9D570039D3A7 /* Blur.swift in Sources */,
 				E345E43127BEEFBC0037FE51 /* SWADTO.swift in Sources */,
 				E352C54127D751E000B3ECDA /* ScannerView.swift in Sources */,
 				E3CE6FEF27BBADC000B2ACB8 /* Token.swift in Sources */,

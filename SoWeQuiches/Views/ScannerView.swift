@@ -31,7 +31,7 @@ struct ScannerView: View {
                     }
                     .padding()
                     .foregroundColor(.black)
-                    .background(colorScheme == .dark ? .black : .white)
+                    .background(Blur(style: .systemUltraThinMaterial))
                     .cornerRadius(.greatestFiniteMagnitude)
                 }
                 .padding(.top, 60)
@@ -45,19 +45,13 @@ struct ScannerView: View {
                 Spacer()
             }.padding(.bottom, 35)
         }
-//        }
-//        .alert(isPresented: $showAlert) {
-//            Alert(
-//                title: Text(viewModel.lastQrCode),
-//                message: Text(""),
-//                dismissButton: .default(Text("Ok"), action: {
-////                    self.viewRouter.currentPage = ""
-//                    DispatchQueue.main.async {
-//                        self.viewModel.lastQrCode = ""
-////                        withAnimation { self.viewRouter.currentPage = "qrcode.viewfinder" }
-//                    }
-//                }))
-//        }
+        .alert(isPresented: $showAlert) {
+            Alert(
+                title: Text("Une erreur est survenue"),
+                message: Text("Veuillez scanner un QR Code compatible"),
+                dismissButton: .default(Text("Réessayer"), action: {})
+            )
+        }
         
     }
 

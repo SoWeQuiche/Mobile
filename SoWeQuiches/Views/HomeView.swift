@@ -118,16 +118,16 @@ struct HomeView: View {
                 selectedAttendance = Attendance(name: "Tst\(code)", timeslot: timeslotId)
                 deepLinkManager.clear()
             }
-            .alert(isPresented: $showDisconnectAlert) {
-                Alert(title: Text("Déconnexion"),
-                 message: Text("Êtes-vous sûr(e) de vouloir vous déconnecter?"),
-                 primaryButton: .cancel(Text("Annuler")),
-                 secondaryButton: .destructive(Text("Se déconnecter"), action: {
-                    Task {
-                        await disconnect()
-                    }
-                 }))
-            }
+        }
+        .alert(isPresented: $showDisconnectAlert) {
+            Alert(title: Text("Déconnexion"),
+             message: Text("Êtes-vous sûr(e) de vouloir vous déconnecter?"),
+             primaryButton: .cancel(Text("Annuler")),
+             secondaryButton: .destructive(Text("Se déconnecter"), action: {
+                Task {
+                    await disconnect()
+                }
+             }))
         }
     }
 
