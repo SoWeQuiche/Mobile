@@ -15,10 +15,3 @@ struct AttendanceService {
     @Network<Void>(authenticated: .sign, method: .PATCH)
     var sign
 }
-
-struct FileUploaderResponse: Decodable {
-    let url: String
-    let type: String
-    let filename: String
-    let _id: String
-}
