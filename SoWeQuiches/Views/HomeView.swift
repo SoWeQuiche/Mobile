@@ -14,6 +14,7 @@ struct HomeView: View {
     @State var selectedAttendance: Attendance?
     @State var nextTimeSlots: [Timeslot] = []
     @State var actualTimeSlot: Timeslot?
+    @State var showDisconnectAlert: Bool = false
 
     let userService: UserService = UserService()
     var timeslotService: TimeslotService = TimeslotService()
@@ -23,11 +24,23 @@ struct HomeView: View {
         NavigationView {
             ScrollView {
                 VStack {
-                    Text(actualTimeSlot != nil ? actualTimeSlot?.groupName ?? "" : "Aucun séance prévu")
-                        .font(.title)
-                        .foregroundColor(Color.white)
-                        .padding(.vertical, 30)
-
+                    ZStack {
+                        Text(actualTimeSlot != nil ? actualTimeSlot?.groupName ?? "" : "Aucun séance prévu")
+                            .font(.title)
+                            .foregroundColor(Color.white)
+                            .padding(.vertical, 65)
+                        Button(action: { self.showDisconnectAlert.toggle() }) {
+                            Image(systemName: "power")
+                                .font(Font.subheadline.weight(.bold))
+                        }
+                        .padding(10)
+                        .foregroundColor(.white)
+                        .background(Color("orange"))
+                        .clipShape(Circle())
+                        .padding(.horizontal, 30)
+                        .padding(.bottom, 25)
+                        .position(x: 340, y: 50)
+                    }
                     VStack(spacing: 50) {
                         VStack {
                             Text(actualTimeSlot?.groupName ?? "")
@@ -99,12 +112,6 @@ struct HomeView: View {
                                     }
                                 }
                             }
-
-                            Button("Disconnect") {
-                                Task {
-                                    await disconnect()
-                                }
-                            }
                         }
                     }
                 }
@@ -115,6 +122,16 @@ struct HomeView: View {
             .navigationBarHidden(true)
             .task {
                 await fetchUserTimeslots()
+            }
+            .alert(isPresented: $showDisconnectAlert) {
+                Alert(title: Text("Déconnexion"),
+                 message: Text("Êtes-vous sûr(e) de vouloir vous déconnecter?"),
+                 primaryButton: .cancel(Text("Annuler")),
+                 secondaryButton: .destructive(Text("Se déconnecter"), action: {
+                    Task {
+                        await disconnect()
+                    }
+                 }))
             }
         }
     }
