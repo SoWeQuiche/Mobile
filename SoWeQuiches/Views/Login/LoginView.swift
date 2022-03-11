@@ -94,6 +94,13 @@ struct LoginView: View {
             .padding(.top, 20)
             .navigationBarTitle("So We Quiches")
             .background(Color("background"))
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                Image("Quiche")
+                    .scaleEffect(0.60)
+                    .padding(.top, 80)
+                }
+            }
         }
     }
 }
