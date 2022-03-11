@@ -21,6 +21,7 @@ struct SignView: View {
                 .foregroundColor(Color.white)
                 .font(.title)
                 .bold()
+                .padding(.top, 40)
 
             Text(attendance.timeslot)
                 .foregroundColor(Color.white)
@@ -43,13 +44,13 @@ struct SignView: View {
 
             Button(action: { await saveSignature() }) {
                 Text("Valider ma présence")
+                    .bold()
                     .frame(maxWidth: .infinity)
                     .padding(.vertical)
             }
             .foregroundColor(.white)
             .background(Color("orange"))
             .cornerRadius(50)
-
             Spacer()
         }
         .padding()

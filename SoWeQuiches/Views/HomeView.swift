@@ -59,6 +59,7 @@ struct HomeView: View {
                             HStack {
                                 Button(action: { selectedAttendance = Attendance(name: actualTimeSlot?.groupName ?? "", timeslot: actualTimeSlot?.courseTimelapse ?? "") }) {
                                     Text("Signer")
+                                        .bold()
                                         .foregroundColor(Color.white)
                                         .frame(maxWidth: .infinity, maxHeight: 16)
                                         .padding(.vertical)
