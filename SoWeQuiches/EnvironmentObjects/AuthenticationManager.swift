@@ -1,5 +1,5 @@
 //
-//  ApplicationState.swift
+//  AuthenticationManager.swift
 //  SoWeQuiches
 //
 //  Created by Zakarya TOLBA on 17/02/2022.
@@ -8,11 +8,11 @@
 import Foundation
 import SwiftUI
 
-class ApplicationState: ObservableObject {
+class AuthenticationManager: ObservableObject {
+    @Keychained(key: .accessToken) var accessToken
+    @Keychained(key: .refreshToken) var refreshToken
 
     @Published var state: State = .loading
-    static var shared: ApplicationState = .init()
-    @Keychained(key: .accessToken) var accessToken
     
     func openApp() async {
         do {
@@ -23,11 +23,20 @@ class ApplicationState: ObservableObject {
         }
     }
 
+    func login(tokenResponse: TokenResponse) async{
+        self.accessToken = tokenResponse.token
+        self.refreshToken = tokenResponse.refreshToken
+
+        await authenticate()
+    }
+
     func authenticate() async {
         await setState(.authenticated)
     }
 
     func disconnect() async {
+        accessToken = nil
+        refreshToken = nil
         await setState(.unauthenticated)
     }
 

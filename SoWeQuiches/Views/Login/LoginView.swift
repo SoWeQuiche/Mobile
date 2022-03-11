@@ -9,23 +9,35 @@ import SwiftUI
 import AuthenticationServices
 
 struct LoginView: View {
-    
-    @Environment(\.colorScheme) var colorScheme
-    @StateObject var viewModel: LoginViewModel
+    @EnvironmentObject var applicationState: AuthenticationManager
+    @Environment(\.colorScheme) private var colorScheme
+
+    let userService: UserService = .init()
+
+    @State var isLoading: Bool = false
+    @State var formError: FormError?
+    @State var mail: String = ""
+    @State var password: String = ""
+
+    var hasEmptyField: Bool {
+        return mail.isEmpty || password.isEmpty
+    }
     
     var body: some View {
         NavigationView {
             VStack(alignment: .center, spacing: 0) {
                 Spacer()
                 VStack {
-                    if let message = viewModel.formError?.message {
+                    if let message = formError?.message {
                         Text(message)
                             .fontWeight(.semibold)
                             .foregroundColor(.red)
                             .padding(.bottom, 30)
                     }
-                }.frame(height: 15)
-                TextField("e-mail", text: $viewModel.mail)
+                }
+                .frame(height: 15)
+
+                TextField("e-mail", text: $mail)
                     .preferredColorScheme(.dark)
                     .padding(.vertical, 12)
                     .padding(.leading, 30)
@@ -34,7 +46,8 @@ struct LoginView: View {
                     .font(.headline.weight(.semibold))
                     .padding(.horizontal, 30)
                     .padding(.bottom, 20)
-                SecureField("mot de passe", text: $viewModel.password)
+
+                SecureField("mot de passe", text: $password)
                     .preferredColorScheme(.dark)
                     .padding(.vertical, 12)
                     .padding(.leading, 30)
@@ -42,14 +55,12 @@ struct LoginView: View {
                     .foregroundColor(.white)
                     .font(.headline.weight(.semibold))
                     .padding(.horizontal, 30)
+
                 Spacer()
-                Button(action: {
-                    Task {
-                        await viewModel.login(mail: self.viewModel.mail, password: self.viewModel.password)
-                    }
-                }) {
+
+                Button(action: { await login() }) {
                     HStack {
-                        if viewModel.isLoading {
+                        if isLoading {
                             ProgressView().padding(.horizontal, 10).progressViewStyle(CircularProgressViewStyle(tint: Color.white))
                             Text("Chargement...")
                                 .bold()
@@ -58,16 +69,22 @@ struct LoginView: View {
                             Text("Connexion")
                                 .bold()
                         }
-                    }.frame(maxWidth: .infinity, maxHeight: 55)
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: 55)
                     .foregroundColor(.white)
                     .background(Color("orange"))
                     .clipShape(Capsule())
                     .padding(.horizontal, 30)
                     .padding(.bottom, 25)
                 }
-                SignInWithAppleButton(.signIn,
-                    onRequest: { viewModel.generateRequest($0)},
-                    onCompletion: { viewModel.authenticationComplete($0) })
+
+                SignInWithAppleButton(
+                    .signIn,
+                    onRequest: { generateSignInWithAppleRequest($0)},
+                    onCompletion: { result in
+                        Task { await loginWithSignInWithApple(result) }
+                    }
+                )
                 .signInWithAppleButtonStyle(.white)
                 .frame(height: 55)
                 .clipShape(Capsule())
@@ -83,6 +100,6 @@ struct LoginView: View {
 
 struct Login_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView(viewModel: LoginViewModel())
+        LoginView()
     }
 }
