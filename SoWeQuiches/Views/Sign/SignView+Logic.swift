@@ -18,7 +18,9 @@ extension SignView {
         guard let dataImage = canvasView.image.pngData() else { return }
 
         do {
-            try await attendanceService.fileUploader.uploadFile(filename: "sign.png", filetype: "image/png", data: dataImage)
+            let fileUploaderResponse = try await attendanceService.fileUploader.uploadFile(filename: "sign.png", filetype: "image/png", data: dataImage)
+            guard let attendanceId = attendanceTimeSlot.attendanceId else { return }
+            try await attendanceService.sign.call(body: SignRequestDTO(signFileId: fileUploaderResponse._id), pathKeysValues: ["attendanceId": attendanceId])
             dismiss()
         } catch(let error) {
             print(error)
