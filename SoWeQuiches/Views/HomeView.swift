@@ -29,88 +29,78 @@ struct HomeView: View {
                     .foregroundColor(Color.white)
                     .padding(.vertical, 30)
 
-                VStack(spacing: 50) {
+                VStack {
+                    Text(actualTimeSlot?.groupName ?? "")
+                        .font(.title2)
+                        .bold()
+                        .foregroundColor(Color.white)
+                    Text(actualTimeSlot?.dateOfCourse ?? "")
+                        .foregroundColor(Color.white)
+                        .font(.title3)
+                        .multilineTextAlignment(.center)
+                    Text(actualTimeSlot?.courseTimelapse ?? "")
+                        .foregroundColor(Color.white)
+                        .font(.title3)
+                        .multilineTextAlignment(.center)
+
+                    HStack {
+                        Button(action: { scannerViewIsPresented = true }) {
+                            Image(systemName: "qrcode.viewfinder")
+                        }
+
+                        Button(action: { selectedAttendance = Attendance(name: actualTimeSlot?.groupName ?? "", timeslot: actualTimeSlot?.courseTimelapse ?? "") }) {
+                            Text("Signer")
+                                .foregroundColor(Color.white)
+                                .frame(maxWidth: .infinity, maxHeight: 16)
+                                .padding(.vertical)
+                                .background(Color("orange"))
+                                .cornerRadius(50)
+                        }
+                    }
+                }
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 50)
+                .padding(.horizontal)
+                .background(Color("cardBackground"))
+                .cornerRadius(5)
+
+                Text("\(nextTimeSlots.count) Prochain cours")
+                    .font(.title)
+                    .foregroundColor(Color.white)
+                    .padding(.vertical, 30)
+
+                ForEach(nextTimeSlots, id: \.self) { timeSlot in
                     VStack {
-                        Text(actualTimeSlot?.groupName ?? "")
+                        Text(timeSlot.groupName)
                             .font(.title2)
                             .bold()
                             .foregroundColor(Color.white)
-                        Text(actualTimeSlot?.dateOfCourse ?? "")
+                        Text(timeSlot.dateOfCourse)
                             .foregroundColor(Color.white)
                             .font(.title3)
                             .multilineTextAlignment(.center)
-                        Text(actualTimeSlot?.courseTimelapse ?? "")
+                        Text(timeSlot.courseTimelapse)
                             .foregroundColor(Color.white)
                             .font(.title3)
                             .multilineTextAlignment(.center)
-
-                        HStack {
-                            Button(action: { scannerViewIsPresented = true }) {
-                                Image(systemName: "qrcode.viewfinder")
-                            }
-
-                            Button(action: { selectedAttendance = Attendance(name: actualTimeSlot?.groupName ?? "", timeslot: actualTimeSlot?.courseTimelapse ?? "") }) {
-                                Text("Signer")
-                                    .foregroundColor(Color.white)
-                                    .frame(maxWidth: .infinity, maxHeight: 16)
-                                    .padding(.vertical)
-                                    .background(Color("orange"))
-                                    .cornerRadius(50)
-                            }
-                        }
                     }
                     .frame(maxWidth: .infinity)
+                    .padding(.horizontal, 75)
                     .padding(.vertical, 50)
-                    .padding(.horizontal)
                     .background(Color("cardBackground"))
                     .cornerRadius(5)
-
-                    Text("\(nextTimeSlots.count) Prochain cours")
-                        .font(.title)
-                        .foregroundColor(Color.white)
-                        .padding(.vertical, 30)
-
-                    VStack(spacing: 50) {
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack {
-                                ForEach(nextTimeSlots, id: \.self) { timeSlot in
-                                    VStack {
-                                        Text(timeSlot.groupName)
-                                            .font(.title2)
-                                            .bold()
-                                            .foregroundColor(Color.white)
-                                        Text(timeSlot.dateOfCourse)
-                                            .foregroundColor(Color.white)
-                                            .font(.title3)
-                                            .multilineTextAlignment(.center)
-                                        Text(timeSlot.courseTimelapse)
-                                            .foregroundColor(Color.white)
-                                            .font(.title3)
-                                            .multilineTextAlignment(.center)
-                                    }
-                                    .frame(maxWidth: .infinity)
-                                    .padding(.horizontal, 75)
-                                    .padding(.vertical, 50)
-                                    .background(Color("cardBackground"))
-                                    .cornerRadius(5)
-                                    .padding(.horizontal)
-                                    .sheet(item: $selectedAttendance) { SignView(attendance: $0) }
-                                    .onChange(of: deepLinkManager.deepLink) { deepLink in
-                                        if case let .sign(timeslotId: timeslotId, code: code) = deepLink {
-                                            selectedAttendance = Attendance(name: "Tst\(code)", timeslot: timeslotId)
-                                            deepLinkManager.clear()
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        Button("Disconnect") {
-                            Task {
-                                await disconnect()
-                            }
+                    .padding(.horizontal)
+                    .sheet(item: $selectedAttendance) { SignView(attendance: $0) }
+                    .onChange(of: deepLinkManager.deepLink) { deepLink in
+                        if case let .sign(timeslotId: timeslotId, code: code) = deepLink {
+                            selectedAttendance = Attendance(name: "Tst\(code)", timeslot: timeslotId)
+                            deepLinkManager.clear()
                         }
                     }
+                }
+
+                Button(action: { await disconnect() }) {
+                    Text("Disconnect")
                 }
             }
         }
