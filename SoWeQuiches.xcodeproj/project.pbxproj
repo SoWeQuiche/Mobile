@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		032DE8DE27DB3BFC004B2337 /* Timeslot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032DE8DD27DB3BFC004B2337 /* Timeslot.swift */; };
+		032DE8E027DB3C2B004B2337 /* TimeslotService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032DE8DF27DB3C2B004B2337 /* TimeslotService.swift */; };
+		032DE8E227DB3F55004B2337 /* HomeView+Logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032DE8E127DB3F55004B2337 /* HomeView+Logic.swift */; };
 		0375446D27D7652D009D7196 /* Attendance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375446C27D7652D009D7196 /* Attendance.swift */; };
 		0375617027BA578F0067325A /* SoWeQuichesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375616F27BA578F0067325A /* SoWeQuichesApp.swift */; };
 		0375617427BA57920067325A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0375617327BA57920067325A /* Assets.xcassets */; };
@@ -42,6 +45,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		032DE8DD27DB3BFC004B2337 /* Timeslot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timeslot.swift; sourceTree = "<group>"; };
+		032DE8DF27DB3C2B004B2337 /* TimeslotService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeslotService.swift; sourceTree = "<group>"; };
+		032DE8E127DB3F55004B2337 /* HomeView+Logic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeView+Logic.swift"; sourceTree = "<group>"; };
 		0375446C27D7652D009D7196 /* Attendance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attendance.swift; sourceTree = "<group>"; };
 		0375616C27BA578F0067325A /* SoWeQuiches.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoWeQuiches.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0375616F27BA578F0067325A /* SoWeQuichesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoWeQuichesApp.swift; sourceTree = "<group>"; };
@@ -172,6 +178,7 @@
 			children = (
 				03DB363827BBF27B00E4B74B /* SignView.swift */,
 				87DCF82427DAB9E500446457 /* SignView+Logic.swift */,
+				032DE8E127DB3F55004B2337 /* HomeView+Logic.swift */,
 			);
 			path = Sign;
 			sourceTree = "<group>";
@@ -224,6 +231,7 @@
 				0375446C27D7652D009D7196 /* Attendance.swift */,
 				E3CE6FEE27BBADC000B2ACB8 /* Token.swift */,
 				E3071C4927BE4199006BAA28 /* User.swift */,
+				032DE8DD27DB3BFC004B2337 /* Timeslot.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -234,6 +242,7 @@
 				E3CE6FF327BBE7D600B2ACB8 /* HTTPEndpoint.swift */,
 				87DCF82627DABA0D00446457 /* AttendanceService.swift */,
 				E3CE6FF027BBB03400B2ACB8 /* UserService.swift */,
+				032DE8DF27DB3C2B004B2337 /* TimeslotService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -344,9 +353,12 @@
 				E3071C5927BE78B3006BAA28 /* HomeView.swift in Sources */,
 				87DCF82927DABCC000446457 /* PKCanvasView+Extensions.swift in Sources */,
 				E3CE6FF427BBE7D600B2ACB8 /* HTTPEndpoint.swift in Sources */,
+				032DE8DE27DB3BFC004B2337 /* Timeslot.swift in Sources */,
+				032DE8E027DB3C2B004B2337 /* TimeslotService.swift in Sources */,
 				E3071C5E27BE7DC4006BAA28 /* AccessTokenKey.swift in Sources */,
 				E3071C4A27BE4199006BAA28 /* User.swift in Sources */,
 				0375617027BA578F0067325A /* SoWeQuichesApp.swift in Sources */,
+				032DE8E227DB3F55004B2337 /* HomeView+Logic.swift in Sources */,
 				87DCF81B27DA50D700446457 /* DeepLinkManager.swift in Sources */,
 				E3071C5727BE7339006BAA28 /* KeychainAccess.swift in Sources */,
 				E3071C6127BE8910006BAA28 /* AuthenticationManager.swift in Sources */,
