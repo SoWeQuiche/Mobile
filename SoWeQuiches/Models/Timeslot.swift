@@ -7,7 +7,9 @@
 
 import Foundation
 
-struct Timeslot: Decodable, Hashable {
+struct Timeslot: Decodable, Hashable, Identifiable {
+    var id: String { timeSlotId ?? "" }
+
     var groupName: String
     var organizationId: String
     var groupId: String
@@ -15,6 +17,7 @@ struct Timeslot: Decodable, Hashable {
     var timeSlotId: String?
     var endDate: Date?
     var startDate: Date?
+    var signTBTCode: String?
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -31,6 +34,24 @@ struct Timeslot: Decodable, Hashable {
         endDate = try dateFormatter.date(from: container.decode(String.self, forKey: .endDate))
         startDate = try dateFormatter.date(from: container.decode(String.self, forKey: .startDate))
     }
+
+    init(
+        groupName: String,
+        organizationId: String,
+        groupId: String,
+        attendanceId: String?,
+        timeSlotId: String?,
+        endDate: Date?,
+        startDate: Date?) {
+            self.groupName = groupName
+            self.organizationId = organizationId
+            self.groupId = groupId
+            self.attendanceId = attendanceId
+            self.timeSlotId = timeSlotId
+            self.endDate = endDate
+            self.startDate = startDate
+
+        }
 
     enum CodingKeys: String, CodingKey {
         case groupName,
@@ -61,5 +82,15 @@ struct Timeslot: Decodable, Hashable {
         let endTime = dateFormatter.string(from: endDate)
 
         return "\(startTime) à \(endTime)"
+    }
+
+    var isAskedToSign: Bool {
+
+        print(self.attendanceId)
+
+        switch self.attendanceId {
+        case .none: return false
+        case .some: return true
+        }
     }
 }

@@ -10,7 +10,7 @@
 		032DE8DE27DB3BFC004B2337 /* Timeslot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032DE8DD27DB3BFC004B2337 /* Timeslot.swift */; };
 		032DE8E027DB3C2B004B2337 /* TimeslotService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032DE8DF27DB3C2B004B2337 /* TimeslotService.swift */; };
 		032DE8E227DB3F55004B2337 /* HomeView+Logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032DE8E127DB3F55004B2337 /* HomeView+Logic.swift */; };
-		0375446D27D7652D009D7196 /* Attendance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375446C27D7652D009D7196 /* Attendance.swift */; };
+		032DE8E627DB9BF2004B2337 /* SignRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032DE8E527DB9BF2004B2337 /* SignRequestDTO.swift */; };
 		0375617027BA578F0067325A /* SoWeQuichesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375616F27BA578F0067325A /* SoWeQuichesApp.swift */; };
 		0375617427BA57920067325A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0375617327BA57920067325A /* Assets.xcassets */; };
 		0375617727BA57920067325A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0375617627BA57920067325A /* Preview Assets.xcassets */; };
@@ -51,7 +51,7 @@
 		032DE8DD27DB3BFC004B2337 /* Timeslot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timeslot.swift; sourceTree = "<group>"; };
 		032DE8DF27DB3C2B004B2337 /* TimeslotService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeslotService.swift; sourceTree = "<group>"; };
 		032DE8E127DB3F55004B2337 /* HomeView+Logic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeView+Logic.swift"; sourceTree = "<group>"; };
-		0375446C27D7652D009D7196 /* Attendance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attendance.swift; sourceTree = "<group>"; };
+		032DE8E527DB9BF2004B2337 /* SignRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignRequestDTO.swift; sourceTree = "<group>"; };
 		0375616C27BA578F0067325A /* SoWeQuiches.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoWeQuiches.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0375616F27BA578F0067325A /* SoWeQuichesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoWeQuichesApp.swift; sourceTree = "<group>"; };
 		0375617327BA57920067325A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -107,6 +107,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		032DE8E327DB801D004B2337 /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				E3071C5827BE78B3006BAA28 /* HomeView.swift */,
+				032DE8E127DB3F55004B2337 /* HomeView+Logic.swift */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
 		0375446B27D7651C009D7196 /* Additions */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,7 +201,6 @@
 			children = (
 				87DCF82F27DB3D8200446457 /* SignView.swift */,
 				87DCF82427DAB9E500446457 /* SignView+Logic.swift */,
-				032DE8E127DB3F55004B2337 /* HomeView+Logic.swift */,
 			);
 			path = Sign;
 			sourceTree = "<group>";
@@ -242,6 +250,7 @@
 		E3CE6FDC27BBAB9E00B2ACB8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				032DE8E327DB801D004B2337 /* HomeView */,
 				87DCF81E27DAB05A00446457 /* Login */,
 				87DCF82327DAB9A900446457 /* Sign */,
 				E3071C5827BE78B3006BAA28 /* HomeView.swift */,
@@ -254,7 +263,6 @@
 			isa = PBXGroup;
 			children = (
 				E3CE6FF227BBD4C600B2ACB8 /* DTO */,
-				0375446C27D7652D009D7196 /* Attendance.swift */,
 				E3CE6FEE27BBADC000B2ACB8 /* Token.swift */,
 				E3071C4927BE4199006BAA28 /* User.swift */,
 				032DE8DD27DB3BFC004B2337 /* Timeslot.swift */,
@@ -278,6 +286,7 @@
 			children = (
 				E3CE6FE827BBAD0500B2ACB8 /* LoginDTO.swift */,
 				E345E43027BEEFBC0037FE51 /* SWADTO.swift */,
+				032DE8E527DB9BF2004B2337 /* SignRequestDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -368,7 +377,6 @@
 				E345E43127BEEFBC0037FE51 /* SWADTO.swift in Sources */,
 				E352C54127D751E000B3ECDA /* ScannerView.swift in Sources */,
 				E3CE6FEF27BBADC000B2ACB8 /* Token.swift in Sources */,
-				0375446D27D7652D009D7196 /* Attendance.swift in Sources */,
 				87DCF82727DABA0D00446457 /* AttendanceService.swift in Sources */,
 				E3CE6FE027BBABB300B2ACB8 /* LoginView.swift in Sources */,
 				87DCF82D27DAC28B00446457 /* Button+Extensions.swift in Sources */,
@@ -385,6 +393,7 @@
 				87DCF82927DABCC000446457 /* PKCanvasView+Extensions.swift in Sources */,
 				E3CE6FF427BBE7D600B2ACB8 /* HTTPEndpoint.swift in Sources */,
 				032DE8DE27DB3BFC004B2337 /* Timeslot.swift in Sources */,
+				032DE8E627DB9BF2004B2337 /* SignRequestDTO.swift in Sources */,
 				032DE8E027DB3C2B004B2337 /* TimeslotService.swift in Sources */,
 				E3071C5E27BE7DC4006BAA28 /* AccessTokenKey.swift in Sources */,
 				E3071C4A27BE4199006BAA28 /* User.swift in Sources */,
@@ -637,8 +646,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/MaxenceMottard/RetroSwift";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.3;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

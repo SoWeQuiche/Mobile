@@ -13,17 +13,17 @@ struct SignView: View {
     let canvasView = PKCanvasView()
 
     let attendanceService = AttendanceService()
-    let attendance: Attendance
+    let attendanceTimeSlot: Timeslot
 
     var body: some View {
         VStack(alignment: .center) {
-            Text(attendance.name)
+            Text(attendanceTimeSlot.groupName)
                 .foregroundColor(Color.white)
                 .font(.title)
                 .bold()
                 .padding(.top, 40)
 
-            Text(attendance.timeslot)
+            Text(attendanceTimeSlot.courseTimelapse)
                 .foregroundColor(Color.white)
                 .font(.title2)
 
@@ -60,6 +60,6 @@ struct SignView: View {
 
 struct SignView_Previews: PreviewProvider {
     static var previews: some View {
-        SignView(attendance: Attendance(name: "Anglais", timeslot: "9h - 18h"))
+        SignView(attendanceTimeSlot: Timeslot(groupName: "", organizationId: "", groupId: "", attendanceId: "", timeSlotId: "", endDate: Date(), startDate: Date()))
     }
 }

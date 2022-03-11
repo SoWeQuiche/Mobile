@@ -38,5 +38,7 @@ extension HomeView {
             guard let endDate = $0.endDate, let nextStartDate = actualTimeSlot?.startDate else { return false }
             return endDate > nextStartDate
         }
+
+        nextTimeSlots = nextTimeSlots.filter { $0.attendanceId != actualTimeSlot?.attendanceId }
     }
 }
