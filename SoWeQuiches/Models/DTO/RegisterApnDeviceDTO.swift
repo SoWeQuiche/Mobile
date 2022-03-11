@@ -9,5 +9,5 @@ import Foundation
 
 struct RegisterApnDeviceDTO: Encodable {
     let deviceId: String
-    let deviceType: String = "iOS"
+    let platform: String = "iOS"
 }
