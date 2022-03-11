@@ -8,11 +8,8 @@
 import Foundation
 import RetroSwift
 
-final class TimeslotService {
-
-    init() {}
+struct TimeslotService {
 
     @Network<[Timeslot]>(authenticated: .timeslots, method: .GET)
     var userTimeslots
-
 }

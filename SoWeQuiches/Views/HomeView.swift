@@ -113,11 +113,9 @@ struct HomeView: View {
             .padding(.horizontal, 25)
             .background(Color("background"))
             .navigationBarHidden(true)
-            .onAppear {
-                 Task {
-                     await fetchUserTimeslots()
-                 }
-             }
+            .task {
+                await fetchUserTimeslots()
+            }
         }
     }
 }
