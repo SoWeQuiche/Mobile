@@ -24,10 +24,24 @@ struct HomeView: View {
     var body: some View {
         ScrollView {
             VStack {
+                HStack {
+                    Spacer()
+                    
+                    Button(action: { self.showDisconnectAlert.toggle() }) {
+                        Image(systemName: "power")
+                            .font(Font.subheadline.weight(.bold))
+                    }
+                    .padding(10)
+                    .foregroundColor(.white)
+                    .background(Color("orange"))
+                    .clipShape(Circle())
+                    .padding(.horizontal, 30)
+                    .padding(.top, 25)
+                }
                 Text(actualTimeSlot != nil ? actualTimeSlot?.groupName ?? "" : "Aucun séance prévu")
                     .font(.title)
                     .foregroundColor(Color.white)
-                    .padding(.vertical, 30)
+                    .padding(.bottom, 20)
 
                 VStack {
                     Text(actualTimeSlot?.groupName ?? "")
@@ -108,10 +122,6 @@ struct HomeView: View {
                             deepLinkManager.clear()
                         }
                     }
-                }
-
-                Button(action: { await disconnect() }) {
-                    Text("Disconnect")
                 }
             }
         }
