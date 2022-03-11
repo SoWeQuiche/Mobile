@@ -6,31 +6,19 @@
 //
 
 import SwiftUI
+import CodeScanner
 
 struct ScannerView: View {
-    @Environment(\.colorScheme) var colorScheme
-    @State var showAlert: Bool = false
-//    @EnvironmentObject var viewRouter: ViewRouter
-    @ObservedObject var viewModel = ScannerViewModel()
-    @ObservedObject var qrCodeViewModel = QrCodeScannerViewModel()
-    @ObservedObject var applicationState: ApplicationState = ApplicationState.shared
-    
-    func tapticSuccess() {
-        let generator = UINotificationFeedbackGenerator()
-        generator.notificationOccurred(.success)
-    }
-    
-    func tapticFail() {
-        let generator = UINotificationFeedbackGenerator()
-        generator.notificationOccurred(.error)
-    }
+    @EnvironmentObject private var deepLinkManager: DeepLinkManager
+    @Environment(\.colorScheme) private var colorScheme
+    @State private var showAlert: Bool = false
+
+    var foundQrCode: (DeepLinkManager.DeepLink) -> ()
     
     var body: some View {
         ZStack {
-            QrCodeScannerView()
-            .found(r: self.viewModel.onFoundQrCode)
-            .torchLight(isOn: self.viewModel.torchIsOn)
-            .interval(delay: self.viewModel.scanInterval)
+            CodeScannerView(codeTypes: [.qr], scanMode: .continuous, completion: onFoundQrCode(result:))
+                .ignoresSafeArea()
             
             VStack {
                 VStack {
@@ -57,39 +45,30 @@ struct ScannerView: View {
                 Spacer()
             }.padding(.bottom, 35)
         }
-        .onChange(of: self.viewModel.lastQrCode) { (_) in
-            print("qrCode change: ", self.viewModel.lastQrCode)
+//        }
+//        .alert(isPresented: $showAlert) {
+//            Alert(
+//                title: Text(viewModel.lastQrCode),
+//                message: Text(""),
+//                dismissButton: .default(Text("Ok"), action: {
+////                    self.viewRouter.currentPage = ""
+//                    DispatchQueue.main.async {
+//                        self.viewModel.lastQrCode = ""
+////                        withAnimation { self.viewRouter.currentPage = "qrcode.viewfinder" }
+//                    }
+//                }))
+//        }
+        
+    }
 
-//            let result = self.viewModel.lastQrCode.components(separatedBy: ", ")
-//            let scannedRestaurant = RestaurantDTO(_id: result[0], name: result[1])
-            
-//          TODO: Handle QR codes passing the regex but not sending back data from the API
-//            if (self.viewModel.lastQrCode.range(of: #"^(\w{24}), [a-zA-Z0-9_ ]*"#,
-//                                options: .regularExpression) != nil){
-                
-//                viewRouter.restaurant = scannedRestaurant
-                
-//                if (applicationState.state == .authenticated) {
-//                    self.viewModel.addRestaurantToHistory(inputRestaurant: scannedRestaurant)
-//                }
-                
-//                self.viewRouter.currentPage = "greetingcard.fill"
-                tapticSuccess()
-//            } else {
-//                tapticFail()
-                self.showAlert = true
-//            }
-        }.alert(isPresented: $showAlert) {
-            Alert(
-                title: Text(self.viewModel.lastQrCode),
-                message: Text(""),
-                dismissButton: .default(Text("Ok"), action: {
-//                    self.viewRouter.currentPage = ""
-                    DispatchQueue.main.async {
-                        self.viewModel.lastQrCode = ""
-//                        withAnimation { self.viewRouter.currentPage = "qrcode.viewfinder" }
-                    }
-                }))
+    func onFoundQrCode(result: Result<ScanResult, ScanError>) {
+        guard case let .success(scanResult) = result,
+              let url = URL(string: scanResult.string) else { return }
+
+        let deepLink = DeepLinkManager.DeepLink.from(url)
+
+        if case .sign(timeslotId: _, code: _) = deepLink {
+            foundQrCode(deepLink)
         }
     }
 }

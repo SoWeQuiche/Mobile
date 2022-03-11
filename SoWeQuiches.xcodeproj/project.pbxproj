@@ -14,8 +14,6 @@
 		0375617027BA578F0067325A /* SoWeQuichesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375616F27BA578F0067325A /* SoWeQuichesApp.swift */; };
 		0375617427BA57920067325A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0375617327BA57920067325A /* Assets.xcassets */; };
 		0375617727BA57920067325A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0375617627BA57920067325A /* Preview Assets.xcassets */; };
-		03DB363727BBF24200E4B74B /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DB363627BBF24200E4B74B /* CanvasView.swift */; };
-		03DB363927BBF27B00E4B74B /* SignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DB363827BBF27B00E4B74B /* SignView.swift */; };
 		03FE426D27BE513C00D71AB2 /* netfox in Frameworks */ = {isa = PBXBuildFile; productRef = 03FE426C27BE513C00D71AB2 /* netfox */; };
 		87DCF81B27DA50D700446457 /* DeepLinkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DCF81A27DA50D700446457 /* DeepLinkManager.swift */; };
 		87DCF81D27DA55E800446457 /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DCF81C27DA55E800446457 /* Collection+Extensions.swift */; };
@@ -24,6 +22,9 @@
 		87DCF82727DABA0D00446457 /* AttendanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DCF82627DABA0D00446457 /* AttendanceService.swift */; };
 		87DCF82927DABCC000446457 /* PKCanvasView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DCF82827DABCC000446457 /* PKCanvasView+Extensions.swift */; };
 		87DCF82D27DAC28B00446457 /* Button+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DCF82C27DAC28B00446457 /* Button+Extensions.swift */; };
+		87DCF83027DB3D8200446457 /* SignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DCF82F27DB3D8200446457 /* SignView.swift */; };
+		87DCF83227DB43C800446457 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DCF83127DB43C800446457 /* CanvasView.swift */; };
+		87DCF83527DB453900446457 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 87DCF83427DB453900446457 /* CodeScanner */; };
 		E3071C4A27BE4199006BAA28 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3071C4927BE4199006BAA28 /* User.swift */; };
 		E3071C5327BE6CEE006BAA28 /* KeychainValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3071C5227BE6CEE006BAA28 /* KeychainValues.swift */; };
 		E3071C5527BE6CF9006BAA28 /* KeychainKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3071C5427BE6CF9006BAA28 /* KeychainKey.swift */; };
@@ -32,15 +33,10 @@
 		E3071C5E27BE7DC4006BAA28 /* AccessTokenKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3071C5D27BE7DC3006BAA28 /* AccessTokenKey.swift */; };
 		E3071C6127BE8910006BAA28 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3071C6027BE8910006BAA28 /* AuthenticationManager.swift */; };
 		E345E43127BEEFBC0037FE51 /* SWADTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E345E43027BEEFBC0037FE51 /* SWADTO.swift */; };
+		E352C54127D751E000B3ECDA /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E352C54027D751E000B3ECDA /* ScannerView.swift */; };
 		E352C55127D7A3B900B3ECDA /* RefreshTokenKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E352C55027D7A3B900B3ECDA /* RefreshTokenKey.swift */; };
 		E352C55427D7A5D900B3ECDA /* JWTDecode in Frameworks */ = {isa = PBXBuildFile; productRef = E352C55327D7A5D900B3ECDA /* JWTDecode */; };
 		E352C55827D7B4C300B3ECDA /* RetroSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E352C55727D7B4C300B3ECDA /* RetroSwift */; };
-		E352C54127D751E000B3ECDA /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E352C54027D751E000B3ECDA /* ScannerView.swift */; };
-		E352C54327D751FD00B3ECDA /* ScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E352C54227D751FD00B3ECDA /* ScannerViewModel.swift */; };
-		E352C54527D7526000B3ECDA /* QrCodeScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E352C54427D7526000B3ECDA /* QrCodeScannerViewModel.swift */; };
-		E352C54727D7528800B3ECDA /* QrCodeCameraDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E352C54627D7528800B3ECDA /* QrCodeCameraDelegate.swift */; };
-		E352C54927D752AF00B3ECDA /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E352C54827D752AF00B3ECDA /* CameraPreview.swift */; };
-		E352C54B27D752F300B3ECDA /* QrCodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E352C54A27D752F300B3ECDA /* QrCodeScannerView.swift */; };
 		E3BF270827BFAD9200BC83F0 /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3BF270727BFAD9200BC83F0 /* AuthenticationServices.framework */; };
 		E3CE6FE027BBABB300B2ACB8 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CE6FDF27BBABB300B2ACB8 /* LoginView.swift */; };
 		E3CE6FE927BBAD0500B2ACB8 /* LoginDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CE6FE827BBAD0500B2ACB8 /* LoginDTO.swift */; };
@@ -59,8 +55,6 @@
 		0375616F27BA578F0067325A /* SoWeQuichesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoWeQuichesApp.swift; sourceTree = "<group>"; };
 		0375617327BA57920067325A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0375617627BA57920067325A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		03DB363627BBF24200E4B74B /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
-		03DB363827BBF27B00E4B74B /* SignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignView.swift; sourceTree = "<group>"; };
 		87DCF81A27DA50D700446457 /* DeepLinkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkManager.swift; sourceTree = "<group>"; };
 		87DCF81C27DA55E800446457 /* Collection+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
 		87DCF81F27DAB06A00446457 /* LoginView+Logic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginView+Logic.swift"; sourceTree = "<group>"; };
@@ -68,6 +62,8 @@
 		87DCF82627DABA0D00446457 /* AttendanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceService.swift; sourceTree = "<group>"; };
 		87DCF82827DABCC000446457 /* PKCanvasView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PKCanvasView+Extensions.swift"; sourceTree = "<group>"; };
 		87DCF82C27DAC28B00446457 /* Button+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button+Extensions.swift"; sourceTree = "<group>"; };
+		87DCF82F27DB3D8200446457 /* SignView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignView.swift; sourceTree = "<group>"; };
+		87DCF83127DB43C800446457 /* CanvasView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		E3071C4927BE4199006BAA28 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E3071C5227BE6CEE006BAA28 /* KeychainValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainValues.swift; sourceTree = "<group>"; };
 		E3071C5427BE6CF9006BAA28 /* KeychainKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainKey.swift; sourceTree = "<group>"; };
@@ -77,15 +73,13 @@
 		E3071C6027BE8910006BAA28 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		E345E42F27BE91C70037FE51 /* SoWeQuiches.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SoWeQuiches.entitlements; sourceTree = "<group>"; };
 		E345E43027BEEFBC0037FE51 /* SWADTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWADTO.swift; sourceTree = "<group>"; };
-		E352C55027D7A3B900B3ECDA /* RefreshTokenKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenKey.swift; sourceTree = "<group>"; };
 		E352C53D27D6BA3700B3ECDA /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		E352C54027D751E000B3ECDA /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
 		E352C54227D751FD00B3ECDA /* ScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewModel.swift; sourceTree = "<group>"; };
 		E352C54427D7526000B3ECDA /* QrCodeScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCodeScannerViewModel.swift; sourceTree = "<group>"; };
 		E352C54627D7528800B3ECDA /* QrCodeCameraDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCodeCameraDelegate.swift; sourceTree = "<group>"; };
-		E352C54827D752AF00B3ECDA /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
-		E352C54A27D752F300B3ECDA /* QrCodeScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCodeScannerView.swift; sourceTree = "<group>"; };
 		E352C54C27D753F700B3ECDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		E352C55027D7A3B900B3ECDA /* RefreshTokenKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenKey.swift; sourceTree = "<group>"; };
 		E3BF270727BFAD9200BC83F0 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
 		E3CE6FDF27BBABB300B2ACB8 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E3CE6FE827BBAD0500B2ACB8 /* LoginDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDTO.swift; sourceTree = "<group>"; };
@@ -104,6 +98,7 @@
 				03FE426D27BE513C00D71AB2 /* netfox in Frameworks */,
 				E352C55827D7B4C300B3ECDA /* RetroSwift in Frameworks */,
 				E352C55427D7A5D900B3ECDA /* JWTDecode in Frameworks */,
+				87DCF83527DB453900446457 /* CodeScanner in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +121,7 @@
 				0375616E27BA578F0067325A /* SoWeQuiches */,
 				0375616D27BA578F0067325A /* Products */,
 				E3BF270627BFAD9200BC83F0 /* Frameworks */,
+				87DCF82E27DB3D4F00446457 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,7 +136,6 @@
 		0375616E27BA578F0067325A /* SoWeQuiches */ = {
 			isa = PBXGroup;
 			children = (
-				0375446B27D7651C009D7196 /* Additions */,
 				E352C54C27D753F700B3ECDA /* Info.plist */,
 				E345E42F27BE91C70037FE51 /* SoWeQuiches.entitlements */,
 				0375446B27D7651C009D7196 /* Additions */,
@@ -184,7 +179,7 @@
 		87DCF82227DAB8F600446457 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				03DB363627BBF24200E4B74B /* CanvasView.swift */,
+				87DCF83127DB43C800446457 /* CanvasView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -192,11 +187,21 @@
 		87DCF82327DAB9A900446457 /* Sign */ = {
 			isa = PBXGroup;
 			children = (
-				03DB363827BBF27B00E4B74B /* SignView.swift */,
+				87DCF82F27DB3D8200446457 /* SignView.swift */,
 				87DCF82427DAB9E500446457 /* SignView+Logic.swift */,
 				032DE8E127DB3F55004B2337 /* HomeView+Logic.swift */,
 			);
 			path = Sign;
+			sourceTree = "<group>";
+		};
+		87DCF82E27DB3D4F00446457 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				E352C54627D7528800B3ECDA /* QrCodeCameraDelegate.swift */,
+				E352C54227D751FD00B3ECDA /* ScannerViewModel.swift */,
+				E352C54427D7526000B3ECDA /* QrCodeScannerViewModel.swift */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		E3071C5127BE6CD1006BAA28 /* Keychain */ = {
@@ -222,16 +227,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		E352C53F27D7519300B3ECDA /* Scanner */ = {
-			isa = PBXGroup;
-			children = (
-				E352C54227D751FD00B3ECDA /* ScannerViewModel.swift */,
-				E352C54427D7526000B3ECDA /* QrCodeScannerViewModel.swift */,
-				E352C54627D7528800B3ECDA /* QrCodeCameraDelegate.swift */,
-			);
-			path = Scanner;
-			sourceTree = "<group>";
-		};
 		E3BF270627BFAD9200BC83F0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -247,11 +242,7 @@
 				87DCF81E27DAB05A00446457 /* Login */,
 				87DCF82327DAB9A900446457 /* Sign */,
 				E3071C5827BE78B3006BAA28 /* HomeView.swift */,
-				03DB363827BBF27B00E4B74B /* DrawingView.swift */,
-				03DB363627BBF24200E4B74B /* CanvasView.swift */,
 				E352C54027D751E000B3ECDA /* ScannerView.swift */,
-				E352C54827D752AF00B3ECDA /* CameraPreview.swift */,
-				E352C54A27D752F300B3ECDA /* QrCodeScannerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -271,26 +262,6 @@
 		E3CE6FE727BBACDE00B2ACB8 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				E352C53F27D7519300B3ECDA /* Scanner */,
-				E3071C5C27BE79DC006BAA28 /* Home */,
-				E3CE6FE627BBACC100B2ACB8 /* Login */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		E3CE6FE627BBACC100B2ACB8 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				03FE426927BE434500D71AB2 /* DrawingViewModel.swift */,
-				E3CE6FE127BBABE700B2ACB8 /* LoginViewModel.swift */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		E3CE6FE727BBACDE00B2ACB8 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				E3CE6FF027BBB03400B2ACB8 /* UserService.swift */,
 				E3CE6FF327BBE7D600B2ACB8 /* HTTPEndpoint.swift */,
 				87DCF82627DABA0D00446457 /* AttendanceService.swift */,
 				E3CE6FF027BBB03400B2ACB8 /* UserService.swift */,
@@ -328,6 +299,7 @@
 				03FE426C27BE513C00D71AB2 /* netfox */,
 				E352C55327D7A5D900B3ECDA /* JWTDecode */,
 				E352C55727D7B4C300B3ECDA /* RetroSwift */,
+				87DCF83427DB453900446457 /* CodeScanner */,
 			);
 			productName = SoWeQuiches;
 			productReference = 0375616C27BA578F0067325A /* SoWeQuiches.app */;
@@ -361,6 +333,7 @@
 				03FE426B27BE513B00D71AB2 /* XCRemoteSwiftPackageReference "netfox" */,
 				E352C55227D7A5D900B3ECDA /* XCRemoteSwiftPackageReference "JWTDecode.swift" */,
 				E352C55627D7B4C300B3ECDA /* XCRemoteSwiftPackageReference "RetroSwift" */,
+				87DCF83327DB453900446457 /* XCRemoteSwiftPackageReference "CodeScanner" */,
 			);
 			productRefGroup = 0375616D27BA578F0067325A /* Products */;
 			projectDirPath = "";
@@ -390,7 +363,6 @@
 			files = (
 				E345E43127BEEFBC0037FE51 /* SWADTO.swift in Sources */,
 				E352C54127D751E000B3ECDA /* ScannerView.swift in Sources */,
-				E3CE6FE227BBABE700B2ACB8 /* LoginViewModel.swift in Sources */,
 				E3CE6FEF27BBADC000B2ACB8 /* Token.swift in Sources */,
 				0375446D27D7652D009D7196 /* Attendance.swift in Sources */,
 				87DCF82727DABA0D00446457 /* AttendanceService.swift in Sources */,
@@ -404,30 +376,23 @@
 				E352C55127D7A3B900B3ECDA /* RefreshTokenKey.swift in Sources */,
 				E3CE6FE927BBAD0500B2ACB8 /* LoginDTO.swift in Sources */,
 				E3071C5327BE6CEE006BAA28 /* KeychainValues.swift in Sources */,
-				E352C54727D7528800B3ECDA /* QrCodeCameraDelegate.swift in Sources */,
 				E3071C5927BE78B3006BAA28 /* HomeView.swift in Sources */,
+				87DCF83027DB3D8200446457 /* SignView.swift in Sources */,
 				87DCF82927DABCC000446457 /* PKCanvasView+Extensions.swift in Sources */,
 				E3CE6FF427BBE7D600B2ACB8 /* HTTPEndpoint.swift in Sources */,
 				032DE8DE27DB3BFC004B2337 /* Timeslot.swift in Sources */,
 				032DE8E027DB3C2B004B2337 /* TimeslotService.swift in Sources */,
 				E3071C5E27BE7DC4006BAA28 /* AccessTokenKey.swift in Sources */,
 				E3071C4A27BE4199006BAA28 /* User.swift in Sources */,
-				E352C54327D751FD00B3ECDA /* ScannerViewModel.swift in Sources */,
 				0375617027BA578F0067325A /* SoWeQuichesApp.swift in Sources */,
 				032DE8E227DB3F55004B2337 /* HomeView+Logic.swift in Sources */,
 				87DCF81B27DA50D700446457 /* DeepLinkManager.swift in Sources */,
 				E3071C5727BE7339006BAA28 /* KeychainAccess.swift in Sources */,
 				E3071C6127BE8910006BAA28 /* AuthenticationManager.swift in Sources */,
 				87DCF82027DAB06A00446457 /* LoginView+Logic.swift in Sources */,
-				E3071C5B27BE79C9006BAA28 /* HomeViewModel.swift in Sources */,
-				E352C54927D752AF00B3ECDA /* CameraPreview.swift in Sources */,
+				87DCF83227DB43C800446457 /* CanvasView.swift in Sources */,
 				E3071C5727BE7339006BAA28 /* KeychainAccess.swift in Sources */,
-				E352C54B27D752F300B3ECDA /* QrCodeScannerView.swift in Sources */,
-				E352C54527D7526000B3ECDA /* QrCodeScannerViewModel.swift in Sources */,
-				E3071C6127BE8910006BAA28 /* ApplicationState.swift in Sources */,
-				03FE426A27BE434500D71AB2 /* DrawingViewModel.swift in Sources */,
-				03DB363727BBF24200E4B74B /* CanvasView.swift in Sources */,
-				03DB363927BBF27B00E4B74B /* SignView.swift in Sources */,
+				E3071C6127BE8910006BAA28 /* AuthenticationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -648,6 +613,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		87DCF83327DB453900446457 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		E352C55227D7A5D900B3ECDA /* XCRemoteSwiftPackageReference "JWTDecode.swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/auth0/JWTDecode.swift.git";
@@ -671,6 +644,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 03FE426B27BE513B00D71AB2 /* XCRemoteSwiftPackageReference "netfox" */;
 			productName = netfox;
+		};
+		87DCF83427DB453900446457 /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 87DCF83327DB453900446457 /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
 		};
 		E352C55327D7A5D900B3ECDA /* JWTDecode */ = {
 			isa = XCSwiftPackageProductDependency;
