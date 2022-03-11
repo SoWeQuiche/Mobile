@@ -8,7 +8,7 @@
 import Foundation
 
 enum HTTPEndpoint: String {
-    var baseURL: String { "http://192.168.1.26:3000" }
+    var baseURL: String { "https://api.sign.quiches.ovh" }
 
     case login = "/auth/login"
     case loginApple = "/auth/login/apple-id"
