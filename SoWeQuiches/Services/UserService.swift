@@ -8,17 +8,14 @@
 import Foundation
 import RetroSwift
 
-final class UserService {
-    
-    init() {}
-    
-    @Network<Token>(endpoint: .login, method: .POST)
+struct UserService {
+    @Network<TokenResponse>(endpoint: .login, method: .POST)
     var userLogin
     
-    @Network<Token>(endpoint: .refreshToken, method: .POST)
+    @Network<TokenResponse>(endpoint: .refreshToken, method: .POST)
     var refreshToken
     
-    @Network<Token>(endpoint: .loginApple, method: .POST)
+    @Network<TokenResponse>(endpoint: .loginApple, method: .POST)
     var userLoginApple
     
     @Network<User>(authenticated: .me, method: .GET)

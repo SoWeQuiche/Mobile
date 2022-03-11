@@ -10,33 +10,37 @@ import netfox
 
 @main
 struct SoWeQuichesApp: App {
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-    @ObservedObject var applicationState: ApplicationState = .shared
+    @ObservedObject var deepLinkManager: DeepLinkManager = .init()
+    @ObservedObject var applicationState: AuthenticationManager = .init()
+
+    init() {
+#if DEBUG
+        NFX.sharedInstance().start()
+#endif
+    }
 
     var body: some Scene {
         WindowGroup {
             VStack {
                 if applicationState.state == .authenticated {
-                    HomeView(viewModel: HomeViewModel())
+                    HomeView()
                 } else if applicationState.state == .loading {
                     HStack {
-                        ProgressView().padding(.horizontal, 10).progressViewStyle(CircularProgressViewStyle(tint: Color.white))
+                        ProgressView()
+                            .padding(.horizontal, 10)
+                            .progressViewStyle(CircularProgressViewStyle(tint: Color.white))
                         Text("Chargement...")
                             .bold()
                     }
                 } else {
-                    LoginView(viewModel: LoginViewModel())
+                    LoginView()
                 }
-            }.task { await applicationState.openApp() }
+            }
+            .environmentObject(deepLinkManager)
+            .environmentObject(applicationState)
+            .task { await applicationState.openApp() }
+            .onOpenURL { deepLinkManager.getDeepLink(from: $0) }
+            .onContinueUserActivity(NSUserActivityTypeBrowsingWeb) { deepLinkManager.getDeepLink(from: $0.webpageURL) }
         }
-    }
-}
-
-class AppDelegate: NSObject, UIApplicationDelegate {
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-#if DEBUG
-        NFX.sharedInstance().start()
-#endif
-        return true
     }
 }

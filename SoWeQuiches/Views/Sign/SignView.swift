@@ -1,5 +1,5 @@
 //
-//  DrawingView.swift
+//  SignView.swift
 //  SoWeQuiches
 //
 //  Created by Nicolas Barbosa on 15/02/2022.
@@ -8,30 +8,30 @@
 import SwiftUI
 import PencilKit
 
-struct DrawingView: View {
+struct SignView: View {
+    @Environment(\.dismiss) var dismiss
+    let canvasView = PKCanvasView()
 
-    @ObservedObject var viewModel: DrawingViewModel
-    @Binding var isPresenting: Bool
+    let attendanceService = AttendanceService()
+    let attendance: Attendance
 
     var body: some View {
         VStack(alignment: .center) {
-            Text(viewModel.attendance.name)
+            Text(attendance.name)
                 .foregroundColor(Color.white)
                 .font(.title)
                 .bold()
 
-            Text(viewModel.attendance.timeslot)
+            Text(attendance.timeslot)
                 .foregroundColor(Color.white)
                 .font(.title2)
 
             Spacer()
 
-            CanvasView(canvasView: $viewModel.canvasView)
-            .frame(maxWidth: .infinity, maxHeight: 400)
+            CanvasView(canvasView: canvasView)
+                .frame(maxWidth: .infinity, maxHeight: 400)
 
-            Button(action: {
-                viewModel.cleanSignature()
-            }) {
+            Button(action: { clearCanvas() }) {
                 Text("Effacer ma signature")
                     .frame(maxWidth: .infinity)
                     .padding(.vertical)
@@ -41,12 +41,7 @@ struct DrawingView: View {
 
             Spacer()
 
-            Button(action: {
-                Task {
-                    await viewModel.saveSignature()
-                    isPresenting = false
-                }
-            }) {
+            Button(action: { await saveSignature() }) {
                 Text("Valider ma présence")
                     .frame(maxWidth: .infinity)
                     .padding(.vertical)
@@ -62,8 +57,8 @@ struct DrawingView: View {
     }
 }
 
-struct DrawingView_Previews: PreviewProvider {
+struct SignView_Previews: PreviewProvider {
     static var previews: some View {
-        DrawingView(viewModel: DrawingViewModel(attendance: Attendance(name: "Anglais", timeslot: "9h - 18h")), isPresenting: .constant(true))
+        SignView(attendance: Attendance(name: "Anglais", timeslot: "9h - 18h"))
     }
 }
