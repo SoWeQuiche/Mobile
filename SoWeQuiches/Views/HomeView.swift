@@ -11,7 +11,7 @@ struct HomeView: View {
     @EnvironmentObject var deepLinkManager: DeepLinkManager
     @EnvironmentObject var applicationState: AuthenticationManager
     @State private var isPresenting: Bool = false
-    @State var selectedAttendance: Attendance?
+    @State var selectedTimeslot: Timeslot?
     @State var nextTimeSlots: [Timeslot] = []
     @State var actualTimeSlot: Timeslot?
     @State var scannerViewIsPresented = false
@@ -44,18 +44,26 @@ struct HomeView: View {
                         .multilineTextAlignment(.center)
 
                     HStack {
-                        Button(action: { scannerViewIsPresented = true }) {
-                            Image(systemName: "qrcode.viewfinder")
+                        if ((actualTimeSlot?.isAskedToSign) != nil) {
+                            Button(action: { selectedTimeslot = actualTimeSlot }) {
+                                Text("Signer")
+                                    .foregroundColor(Color.white)
+                                    .frame(maxWidth: .infinity, maxHeight: 16)
+                                    .padding(.vertical)
+                                    .background(Color("orange"))
+                                    .cornerRadius(50)
+                            }
+                        } else {
+                            Button(action: { scannerViewIsPresented = true }) {
+                                Image(systemName: "qrcode.viewfinder")
+                                    .foregroundColor(Color.white)
+                                    .frame(maxWidth: .infinity, maxHeight: 16)
+                                    .padding(.vertical)
+                                    .background(Color("orange"))
+                                    .cornerRadius(50)
+                            }
                         }
 
-                        Button(action: { selectedAttendance = Attendance(name: actualTimeSlot?.groupName ?? "", timeslot: actualTimeSlot?.courseTimelapse ?? "") }) {
-                            Text("Signer")
-                                .foregroundColor(Color.white)
-                                .frame(maxWidth: .infinity, maxHeight: 16)
-                                .padding(.vertical)
-                                .background(Color("orange"))
-                                .cornerRadius(50)
-                        }
                     }
                 }
                 .frame(maxWidth: .infinity)
@@ -90,10 +98,13 @@ struct HomeView: View {
                     .background(Color("cardBackground"))
                     .cornerRadius(5)
                     .padding(.horizontal)
-                    .sheet(item: $selectedAttendance) { SignView(attendance: $0) }
+                    .sheet(item: $selectedTimeslot) { SignView(attendanceTimeSlot: $0) }
+                    .sheet(isPresented: $scannerViewIsPresented) { ScannerView(foundQrCode: foundQRCode(_:)) }
                     .onChange(of: deepLinkManager.deepLink) { deepLink in
                         if case let .sign(timeslotId: timeslotId, code: code) = deepLink {
-                            selectedAttendance = Attendance(name: "Tst\(code)", timeslot: timeslotId)
+                            actualTimeSlot?.signTBTCode = "Tst\(code)"
+                            actualTimeSlot?.timeSlotId = timeslotId
+                            selectedTimeslot = actualTimeSlot
                             deepLinkManager.clear()
                         }
                     }
@@ -110,14 +121,6 @@ struct HomeView: View {
         .navigationBarHidden(true)
         .task {
             await fetchUserTimeslots()
-        }
-        .sheet(item: $selectedAttendance) { SignView(attendance: $0) }
-        .sheet(isPresented: $scannerViewIsPresented) { ScannerView(foundQrCode: foundQRCode(_:)) }
-        .onChange(of: deepLinkManager.deepLink) { deepLink in
-            if case let .sign(timeslotId: timeslotId, code: code) = deepLink {
-                selectedAttendance = Attendance(name: "Tst\(code)", timeslot: timeslotId)
-                deepLinkManager.clear()
-            }
         }
         .alert(isPresented: $showDisconnectAlert) {
             Alert(title: Text("Déconnexion"),

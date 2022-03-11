@@ -11,6 +11,7 @@
 		032DE8E027DB3C2B004B2337 /* TimeslotService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032DE8DF27DB3C2B004B2337 /* TimeslotService.swift */; };
 		032DE8E227DB3F55004B2337 /* HomeView+Logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032DE8E127DB3F55004B2337 /* HomeView+Logic.swift */; };
 		032DE8E627DB9BF2004B2337 /* SignRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032DE8E527DB9BF2004B2337 /* SignRequestDTO.swift */; };
+		032DE8E827DBA96E004B2337 /* FileUploadResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032DE8E727DBA96E004B2337 /* FileUploadResponse.swift */; };
 		0375617027BA578F0067325A /* SoWeQuichesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375616F27BA578F0067325A /* SoWeQuichesApp.swift */; };
 		0375617427BA57920067325A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0375617327BA57920067325A /* Assets.xcassets */; };
 		0375617727BA57920067325A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0375617627BA57920067325A /* Preview Assets.xcassets */; };
@@ -52,6 +53,7 @@
 		032DE8DF27DB3C2B004B2337 /* TimeslotService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeslotService.swift; sourceTree = "<group>"; };
 		032DE8E127DB3F55004B2337 /* HomeView+Logic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeView+Logic.swift"; sourceTree = "<group>"; };
 		032DE8E527DB9BF2004B2337 /* SignRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignRequestDTO.swift; sourceTree = "<group>"; };
+		032DE8E727DBA96E004B2337 /* FileUploadResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUploadResponse.swift; sourceTree = "<group>"; };
 		0375616C27BA578F0067325A /* SoWeQuiches.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoWeQuiches.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0375616F27BA578F0067325A /* SoWeQuichesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoWeQuichesApp.swift; sourceTree = "<group>"; };
 		0375617327BA57920067325A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -69,7 +71,7 @@
 		E3071C5227BE6CEE006BAA28 /* KeychainValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainValues.swift; sourceTree = "<group>"; };
 		E3071C5427BE6CF9006BAA28 /* KeychainKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainKey.swift; sourceTree = "<group>"; };
 		E3071C5627BE7339006BAA28 /* KeychainAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainAccess.swift; sourceTree = "<group>"; };
-		E3071C5827BE78B3006BAA28 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		E3071C5827BE78B3006BAA28 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = SoWeQuiches/Views/HomeView.swift; sourceTree = SOURCE_ROOT; };
 		E3071C5D27BE7DC3006BAA28 /* AccessTokenKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenKey.swift; sourceTree = "<group>"; };
 		E3071C6027BE8910006BAA28 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		E345E42F27BE91C70037FE51 /* SoWeQuiches.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SoWeQuiches.entitlements; sourceTree = "<group>"; };
@@ -253,7 +255,6 @@
 				032DE8E327DB801D004B2337 /* HomeView */,
 				87DCF81E27DAB05A00446457 /* Login */,
 				87DCF82327DAB9A900446457 /* Sign */,
-				E3071C5827BE78B3006BAA28 /* HomeView.swift */,
 				E352C54027D751E000B3ECDA /* ScannerView.swift */,
 			);
 			path = Views;
@@ -266,6 +267,7 @@
 				E3CE6FEE27BBADC000B2ACB8 /* Token.swift */,
 				E3071C4927BE4199006BAA28 /* User.swift */,
 				032DE8DD27DB3BFC004B2337 /* Timeslot.swift */,
+				032DE8E727DBA96E004B2337 /* FileUploadResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -398,6 +400,7 @@
 				E3071C5E27BE7DC4006BAA28 /* AccessTokenKey.swift in Sources */,
 				E3071C4A27BE4199006BAA28 /* User.swift in Sources */,
 				0375617027BA578F0067325A /* SoWeQuichesApp.swift in Sources */,
+				032DE8E827DBA96E004B2337 /* FileUploadResponse.swift in Sources */,
 				032DE8E227DB3F55004B2337 /* HomeView+Logic.swift in Sources */,
 				87DCF81B27DA50D700446457 /* DeepLinkManager.swift in Sources */,
 				E3071C5727BE7339006BAA28 /* KeychainAccess.swift in Sources */,

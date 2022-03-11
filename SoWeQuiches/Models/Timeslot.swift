@@ -85,9 +85,6 @@ struct Timeslot: Decodable, Hashable, Identifiable {
     }
 
     var isAskedToSign: Bool {
-
-        print(self.attendanceId)
-
         switch self.attendanceId {
         case .none: return false
         case .some: return true
